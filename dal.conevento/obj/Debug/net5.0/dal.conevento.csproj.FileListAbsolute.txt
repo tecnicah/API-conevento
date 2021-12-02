@@ -1,0 +1,15 @@
+D:\Desarrollo\Conevento\back\api.conevento\dal.conevento\bin\Debug\net5.0\dal.conevento.deps.json
+D:\Desarrollo\Conevento\back\api.conevento\dal.conevento\bin\Debug\net5.0\dal.conevento.dll
+D:\Desarrollo\Conevento\back\api.conevento\dal.conevento\bin\Debug\net5.0\ref\dal.conevento.dll
+D:\Desarrollo\Conevento\back\api.conevento\dal.conevento\bin\Debug\net5.0\dal.conevento.pdb
+D:\Desarrollo\Conevento\back\api.conevento\dal.conevento\obj\Debug\net5.0\dal.conevento.csproj.AssemblyReference.cache
+D:\Desarrollo\Conevento\back\api.conevento\dal.conevento\obj\Debug\net5.0\dal.conevento.GeneratedMSBuildEditorConfig.editorconfig
+D:\Desarrollo\Conevento\back\api.conevento\dal.conevento\obj\Debug\net5.0\dal.conevento.AssemblyInfoInputs.cache
+D:\Desarrollo\Conevento\back\api.conevento\dal.conevento\obj\Debug\net5.0\dal.conevento.AssemblyInfo.cs
+D:\Desarrollo\Conevento\back\api.conevento\dal.conevento\obj\Debug\net5.0\dal.conevento.csproj.CoreCompileInputs.cache
+D:\Desarrollo\Conevento\back\api.conevento\dal.conevento\obj\Debug\net5.0\dal.conevento.dll
+D:\Desarrollo\Conevento\back\api.conevento\dal.conevento\obj\Debug\net5.0\ref\dal.conevento.dll
+D:\Desarrollo\Conevento\back\api.conevento\dal.conevento\obj\Debug\net5.0\dal.conevento.pdb
+D:\Desarrollo\Conevento\back\api.conevento\dal.conevento\bin\Debug\net5.0\biz.conevento.dll
+D:\Desarrollo\Conevento\back\api.conevento\dal.conevento\bin\Debug\net5.0\biz.conevento.pdb
+D:\Desarrollo\Conevento\back\api.conevento\dal.conevento\obj\Debug\net5.0\dal.conevento.csproj.CopyComplete

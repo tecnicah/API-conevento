@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "dgSpecHash": "tJUMBb+8AMPgmWE0LqekDGFQRQPyZM5wogbtjsKgpMBvjvrOsP9XLsh/ts5aA2JlZ0wqeDAByaICgt/RZ3MgYA==",
+  "success": true,
+  "projectFilePath": "D:\\Desarrollo\\Conevento\\back\\api.conevento\\biz.conevento\\biz.conevento.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\linel\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\linel\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.0\\microsoft.extensions.dependencyinjection.5.0.0.nupkg.sha512",
+    "C:\\Users\\linel\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\linel\\.nuget\\packages\\microsoft.extensions.logging\\5.0.0\\microsoft.extensions.logging.5.0.0.nupkg.sha512",
+    "C:\\Users\\linel\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\5.0.0\\microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\linel\\.nuget\\packages\\microsoft.extensions.options\\5.0.0\\microsoft.extensions.options.5.0.0.nupkg.sha512",
+    "C:\\Users\\linel\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512",
+    "C:\\Users\\linel\\.nuget\\packages\\nlog\\5.0.0-preview.3\\nlog.5.0.0-preview.3.nupkg.sha512",
+    "C:\\Users\\linel\\.nuget\\packages\\nlog.extensions.logging\\5.0.0-preview.3\\nlog.extensions.logging.5.0.0-preview.3.nupkg.sha512",
+    "C:\\Users\\linel\\.nuget\\packages\\nlog.web.aspnetcore\\5.0.0-preview.3\\nlog.web.aspnetcore.5.0.0-preview.3.nupkg.sha512"
+  ],
+  "logs": []
+}
