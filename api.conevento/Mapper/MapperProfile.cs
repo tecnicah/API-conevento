@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
-using biz.conevento.Entities;
-using System.Collections.Generic;
 using api.conevento.Models.User;
+using biz.conevento.Entities;
 
-namespace api.premier.Mapper
+
+namespace api.conevento.Mapper
 {
     public class MapperProfile : Profile
     {
@@ -12,7 +12,7 @@ namespace api.premier.Mapper
             #region User
             CreateMap<User, UserDto>().ReverseMap();
             #endregion
-            
+
         }
     }
 }

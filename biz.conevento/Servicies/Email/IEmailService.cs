@@ -1,4 +1,4 @@
-﻿using biz.conevento.Model.Email;
+﻿using biz.conevento.Models.Email;
 
 namespace biz.conevento.Servicies
 {

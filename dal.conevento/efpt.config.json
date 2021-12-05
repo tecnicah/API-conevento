@@ -1,5 +1,5 @@
 ﻿{
-   "CodeGenerationMode": 0,
+   "CodeGenerationMode": 1,
    "ContextClassName": "Db_ConeventoContext",
    "ContextNamespace": null,
    "DefaultDacpacSchema": null,
@@ -7,7 +7,7 @@
    "IncludeConnectionString": false,
    "ModelNamespace": null,
    "OutputContextPath": "DBContext",
-   "OutputPath": null,
+   "OutputPath": "DBContext",
    "ProjectRootNamespace": "dal.conevento",
    "Schemas": null,
    "SelectedHandlebarsLanguage": 0,

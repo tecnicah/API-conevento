@@ -2,10 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using dal.conevento;
 using biz.conevento.Entities;
-
-#nullable disable
 
 namespace dal.conevento.DBContext
 {
@@ -27,8 +24,6 @@ namespace dal.conevento.DBContext
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.HasAnnotation("Relational:Collation", "SQL_Latin1_General_CP1_CI_AS");
-
             modelBuilder.Entity<CatCategoriaProducto>(entity =>
             {
                 entity.ToTable("Cat_categoria_productos");
@@ -36,8 +31,8 @@ namespace dal.conevento.DBContext
                 entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.Categoria)
-                    .HasMaxLength(50)
-                    .HasColumnName("categoria");
+                    .HasColumnName("categoria")
+                    .HasMaxLength(50);
             });
 
             modelBuilder.Entity<CatProductosServicio>(entity =>
@@ -45,16 +40,16 @@ namespace dal.conevento.DBContext
                 entity.ToTable("cat_productos_servicios");
 
                 entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
-                    .HasColumnName("id");
+                    .HasColumnName("id")
+                    .ValueGeneratedNever();
 
                 entity.Property(e => e.DescripcionCorta)
-                    .HasMaxLength(300)
-                    .HasColumnName("descripcion_corta");
+                    .HasColumnName("descripcion_corta")
+                    .HasMaxLength(300);
 
                 entity.Property(e => e.DescripcionLarga)
-                    .HasMaxLength(300)
-                    .HasColumnName("descripcion_larga");
+                    .HasColumnName("descripcion_larga")
+                    .HasMaxLength(300);
 
                 entity.Property(e => e.DiasBloqueoAntes).HasColumnName("dias_bloqueo_antes");
 
@@ -63,16 +58,16 @@ namespace dal.conevento.DBContext
                 entity.Property(e => e.IdCategoriaProducto).HasColumnName("id_categoria_producto");
 
                 entity.Property(e => e.PrecioPorUnidad)
-                    .HasMaxLength(50)
-                    .HasColumnName("precio_por_unidad");
+                    .HasColumnName("precio_por_unidad")
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.Producto)
-                    .HasMaxLength(50)
-                    .HasColumnName("producto");
+                    .HasColumnName("producto")
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.Unidad)
-                    .HasMaxLength(50)
-                    .HasColumnName("unidad");
+                    .HasColumnName("unidad")
+                    .HasMaxLength(50);
 
                 entity.HasOne(d => d.IdCategoriaProductoNavigation)
                     .WithMany(p => p.CatProductosServicios)
@@ -85,43 +80,43 @@ namespace dal.conevento.DBContext
                 entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.Apellidos)
-                    .HasMaxLength(150)
-                    .HasColumnName("apellidos");
+                    .HasColumnName("apellidos")
+                    .HasMaxLength(150);
 
                 entity.Property(e => e.Colonia)
-                    .HasMaxLength(10)
                     .HasColumnName("colonia")
-                    .IsFixedLength(true);
+                    .HasMaxLength(10)
+                    .IsFixedLength();
 
                 entity.Property(e => e.Correo)
-                    .HasMaxLength(50)
-                    .HasColumnName("correo");
+                    .HasColumnName("correo")
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.Cp)
-                    .HasMaxLength(50)
-                    .HasColumnName("cp");
+                    .HasColumnName("cp")
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.DetallesEvento)
-                    .HasMaxLength(500)
-                    .HasColumnName("detalles_evento");
+                    .HasColumnName("detalles_evento")
+                    .HasMaxLength(500);
 
                 entity.Property(e => e.Direccion)
-                    .HasMaxLength(500)
-                    .HasColumnName("direccion");
+                    .HasColumnName("direccion")
+                    .HasMaxLength(500);
 
                 entity.Property(e => e.Estado).HasColumnName("estado");
 
                 entity.Property(e => e.FechaCreacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("fecha_creacion");
+                    .HasColumnName("fecha_creacion")
+                    .HasColumnType("datetime");
 
                 entity.Property(e => e.FechaPago)
-                    .HasColumnType("datetime")
-                    .HasColumnName("fecha_pago");
+                    .HasColumnName("fecha_pago")
+                    .HasColumnType("datetime");
 
                 entity.Property(e => e.Fin)
-                    .HasColumnType("datetime")
-                    .HasColumnName("fin");
+                    .HasColumnName("fin")
+                    .HasColumnType("datetime");
 
                 entity.Property(e => e.FormaPago).HasColumnName("forma_pago");
 
@@ -130,34 +125,34 @@ namespace dal.conevento.DBContext
                 entity.Property(e => e.IdUsuario).HasColumnName("id_usuario");
 
                 entity.Property(e => e.Inicio)
-                    .HasColumnType("datetime")
-                    .HasColumnName("inicio");
+                    .HasColumnName("inicio")
+                    .HasColumnType("datetime");
 
                 entity.Property(e => e.Municipio).HasColumnName("municipio");
 
                 entity.Property(e => e.NombreEvento)
-                    .HasMaxLength(50)
-                    .HasColumnName("nombre_evento");
+                    .HasColumnName("nombre_evento")
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.Nombres)
-                    .HasMaxLength(150)
-                    .HasColumnName("nombres");
+                    .HasColumnName("nombres")
+                    .HasMaxLength(150);
 
                 entity.Property(e => e.NumExt)
-                    .HasMaxLength(50)
-                    .HasColumnName("num_ext");
+                    .HasColumnName("num_ext")
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.NumInt)
-                    .HasMaxLength(50)
-                    .HasColumnName("num_int");
+                    .HasColumnName("num_int")
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.ReferenciaPago)
-                    .HasMaxLength(500)
-                    .HasColumnName("referencia_pago");
+                    .HasColumnName("referencia_pago")
+                    .HasMaxLength(500);
 
                 entity.Property(e => e.Telefono)
-                    .HasMaxLength(50)
-                    .HasColumnName("telefono");
+                    .HasColumnName("telefono")
+                    .HasMaxLength(50);
 
                 entity.HasOne(d => d.IdUsuarioNavigation)
                     .WithMany(p => p.Eventos)
@@ -172,40 +167,40 @@ namespace dal.conevento.DBContext
                 entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.Apellidos)
-                    .HasMaxLength(100)
-                    .HasColumnName("apellidos");
+                    .HasColumnName("apellidos")
+                    .HasMaxLength(100);
 
                 entity.Property(e => e.Correo)
                     .IsRequired()
-                    .HasMaxLength(200)
-                    .HasColumnName("correo");
+                    .HasColumnName("correo")
+                    .HasMaxLength(200);
 
                 entity.Property(e => e.Estado).HasColumnName("estado");
 
                 entity.Property(e => e.Estatus).HasColumnName("estatus");
 
                 entity.Property(e => e.FechaCreacion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("fecha_creacion");
+                    .HasColumnName("fecha_creacion")
+                    .HasColumnType("datetime");
 
                 entity.Property(e => e.FechaEdicion)
-                    .HasColumnType("datetime")
-                    .HasColumnName("fecha_edicion");
+                    .HasColumnName("fecha_edicion")
+                    .HasColumnType("datetime");
 
                 entity.Property(e => e.Municipio).HasColumnName("municipio");
 
                 entity.Property(e => e.Nombres)
-                    .HasMaxLength(100)
-                    .HasColumnName("nombres");
+                    .HasColumnName("nombres")
+                    .HasMaxLength(100);
 
                 entity.Property(e => e.Pass)
                     .IsRequired()
-                    .HasMaxLength(50)
-                    .HasColumnName("pass");
+                    .HasColumnName("pass")
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.Telefono)
-                    .HasMaxLength(200)
-                    .HasColumnName("telefono");
+                    .HasColumnName("telefono")
+                    .HasMaxLength(200);
             });
 
             OnModelCreatingPartial(modelBuilder);

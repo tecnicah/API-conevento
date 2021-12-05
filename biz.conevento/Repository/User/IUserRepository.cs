@@ -9,5 +9,7 @@ namespace biz.conevento.Repository
 {
     public interface IUserRepository : IGenericRepository<User>
     {
+        string SendMail(string emailTo, string body, string subject);
+        string CreatePassword(int length);
     }
 }

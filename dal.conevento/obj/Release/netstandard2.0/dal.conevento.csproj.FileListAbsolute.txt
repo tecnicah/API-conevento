@@ -1,0 +1,13 @@
+D:\Desarrollo\Conevento\back\prueba\dal.conevento\bin\Release\netstandard2.0\dal.conevento.deps.json
+D:\Desarrollo\Conevento\back\prueba\dal.conevento\bin\Release\netstandard2.0\dal.conevento.dll
+D:\Desarrollo\Conevento\back\prueba\dal.conevento\bin\Release\netstandard2.0\dal.conevento.pdb
+D:\Desarrollo\Conevento\back\prueba\dal.conevento\bin\Release\netstandard2.0\biz.conevento.dll
+D:\Desarrollo\Conevento\back\prueba\dal.conevento\bin\Release\netstandard2.0\biz.conevento.pdb
+D:\Desarrollo\Conevento\back\prueba\dal.conevento\obj\Release\netstandard2.0\dal.conevento.csproj.AssemblyReference.cache
+D:\Desarrollo\Conevento\back\prueba\dal.conevento\obj\Release\netstandard2.0\dal.conevento.GeneratedMSBuildEditorConfig.editorconfig
+D:\Desarrollo\Conevento\back\prueba\dal.conevento\obj\Release\netstandard2.0\dal.conevento.AssemblyInfoInputs.cache
+D:\Desarrollo\Conevento\back\prueba\dal.conevento\obj\Release\netstandard2.0\dal.conevento.AssemblyInfo.cs
+D:\Desarrollo\Conevento\back\prueba\dal.conevento\obj\Release\netstandard2.0\dal.conevento.csproj.CoreCompileInputs.cache
+D:\Desarrollo\Conevento\back\prueba\dal.conevento\obj\Release\netstandard2.0\dal.conevento.csproj.CopyComplete
+D:\Desarrollo\Conevento\back\prueba\dal.conevento\obj\Release\netstandard2.0\dal.conevento.dll
+D:\Desarrollo\Conevento\back\prueba\dal.conevento\obj\Release\netstandard2.0\dal.conevento.pdb

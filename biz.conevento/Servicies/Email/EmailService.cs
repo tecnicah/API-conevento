@@ -1,4 +1,4 @@
-﻿using biz.conevento.Model.Email;
+﻿using biz.conevento.Models.Email;
 using System;
 using System.IO;
 using System.Net;
@@ -8,7 +8,7 @@ namespace biz.conevento.Servicies
 {
     public class EmailService : IEmailService
     {
-        private const string V = "C:/Users/erick/Documents/Premier API/back-3.1/back/api.premier/api.aldea/Files/";
+        private const string V = "C:/Users/erick/Documents/conevento API/back-3.1/back/api.conevento/api.conevento/Files/";
 
         public string SendEmail(EmailModel email)
         {
@@ -21,9 +21,9 @@ namespace biz.conevento.Servicies
                 smtpClient.Timeout = 10000;
                 smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
                 smtpClient.UseDefaultCredentials = false;
-                smtpClient.Credentials = new NetworkCredential("NoReply.VIOLET@premierdestinationservices.com", "Laurel22");
+                smtpClient.Credentials = new NetworkCredential("NoReply.VIOLET@coneventodestinationservices.com", "Laurel22");
                 MailMessage mailMessage = new MailMessage();
-                mailMessage.From = new MailAddress("NoReply.VIOLET@premierdestinationservices.com", "Premier");
+                mailMessage.From = new MailAddress("NoReply.VIOLET@coneventodestinationservices.com", "Conevento");
                 mailMessage.To.Add(email.To);
                 mailMessage.Subject = email.Subject;
                 mailMessage.SubjectEncoding = System.Text.Encoding.UTF8;
@@ -54,10 +54,10 @@ namespace biz.conevento.Servicies
                 smtpClient.Timeout = 10000;
                 smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
                 smtpClient.UseDefaultCredentials = false;
-                smtpClient.Credentials = new NetworkCredential("NoReply.VIOLET@premierdestinationservices.com", "Laurel22");
+                smtpClient.Credentials = new NetworkCredential("NoReply.VIOLET@conevento.com", "Laurel22");
                 
                 MailMessage mailMessage = new MailMessage();
-                mailMessage.From = new MailAddress("NoReply.VIOLET@premierdestinationservices.com", "Premier");
+                mailMessage.From = new MailAddress("NoReply.VIOLET@conevento.com", "Conevento");
                 mailMessage.To.Add(email.To);
                 mailMessage.Subject = email.Subject;
                 mailMessage.IsBodyHtml = email.IsBodyHtml;
