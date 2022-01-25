@@ -18,7 +18,19 @@
          "ObjectType": 0
       },
       {
+         "Name": "[dbo].[Cat_estados]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Cat_Municipios]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[dbo].[cat_productos_servicios]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Cat_Tipos_unidad]",
          "ObjectType": 0
       },
       {
@@ -26,7 +38,15 @@
          "ObjectType": 0
       },
       {
+         "Name": "[dbo].[Lista_productos_evento]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[dbo].[users]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[variables_sistema]",
          "ObjectType": 0
       }
    ],
@@ -38,6 +58,7 @@
    "UseHandleBars": false,
    "UseInflector": true,
    "UseLegacyPluralizer": false,
+   "UseManyToManyEntity": false,
    "UseNoConstructor": false,
    "UseNoDefaultConstructor": false,
    "UseNoNavigations": false,

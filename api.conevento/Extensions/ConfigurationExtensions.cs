@@ -34,6 +34,10 @@ namespace api.conevento.Extensions
                 .WithOrigins("http://localhost:4200")
                 .WithOrigins("http://34.237.214.147")
                 .WithOrigins("http://localhost:63410")
+                .WithOrigins("https://conevento.com")
+                .WithOrigins("https://www.conevento.com")
+                .WithOrigins("http://www.conevento.com")
+                .WithOrigins("http://www.conevento.com/Wizard")
                 .AllowCredentials();
             }));
         }
@@ -41,7 +45,9 @@ namespace api.conevento.Extensions
         public static void ConfigureRepositories(this IServiceCollection services)
         {
             services.AddTransient<IUserRepository, UserRepository>();
-           
+            services.AddTransient<ICat_categoria_productosRepository, Cat_categoria_productosRepository>();
+            services.AddTransient<Icat_productos_serviciosRepository, cat_productos_serviciosRespository>();
+            services.AddTransient<IEventosRepository, EventosRepository>();
         }
         
         public static void ConfigureServices(this IServiceCollection services)

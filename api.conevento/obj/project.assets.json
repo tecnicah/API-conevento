@@ -913,6 +913,20 @@
           }
         }
       },
+      "Stripe.net/39.84.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Bcl.AsyncInterfaces": "1.1.0",
+          "Newtonsoft.Json": "11.0.1",
+          "System.Configuration.ConfigurationManager": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Stripe.net.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Stripe.net.dll": {}
+        }
+      },
       "Swashbuckle.AspNetCore.Swagger/5.5.1": {
         "type": "package",
         "dependencies": {
@@ -1120,7 +1134,7 @@
           "System.Security.Permissions": "4.5.0"
         },
         "compile": {
-          "ref/netstandard2.0/_._": {}
+          "ref/netstandard2.0/System.Configuration.ConfigurationManager.dll": {}
         },
         "runtime": {
           "lib/netstandard2.0/System.Configuration.ConfigurationManager.dll": {}
@@ -1676,7 +1690,7 @@
           "System.Security.Principal.Windows": "4.5.0"
         },
         "compile": {
-          "ref/netstandard2.0/_._": {}
+          "ref/netstandard2.0/System.Security.AccessControl.dll": {}
         },
         "runtime": {
           "lib/netstandard2.0/System.Security.AccessControl.dll": {}
@@ -1742,7 +1756,7 @@
           "System.Security.AccessControl": "4.5.0"
         },
         "compile": {
-          "ref/netstandard2.0/_._": {}
+          "ref/netstandard2.0/System.Security.Permissions.dll": {}
         },
         "runtime": {
           "lib/netstandard2.0/System.Security.Permissions.dll": {}
@@ -1754,7 +1768,7 @@
           "Microsoft.NETCore.Platforms": "2.0.0"
         },
         "compile": {
-          "ref/netstandard2.0/_._": {}
+          "ref/netstandard2.0/System.Security.Principal.Windows.dll": {}
         },
         "runtime": {
           "lib/netstandard2.0/System.Security.Principal.Windows.dll": {}
@@ -1997,7 +2011,8 @@
           "Microsoft.AspNetCore.Mvc.Abstractions": "2.2.0",
           "Microsoft.AspNetCore.Mvc.Core": "2.2.5",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.5",
-          "NLog.Web.AspNetCore": "4.9.2"
+          "NLog.Web.AspNetCore": "4.9.2",
+          "Stripe.net": "39.84.0"
         },
         "compile": {
           "bin/placeholder/biz.conevento.dll": {}
@@ -2014,6 +2029,7 @@
           "Microsoft.AspNetCore.Mvc.Abstractions": "2.2.0",
           "Microsoft.AspNetCore.Mvc.Core": "2.2.5",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.5",
+          "Stripe.net": "39.84.0",
           "System.IdentityModel.Tokens.Jwt": "6.7.1",
           "biz.conevento": "1.0.0"
         },
@@ -2057,7 +2073,7 @@
       ]
     },
     "CryptoHelper/3.0.2": {
-      "sha512": "b97hwjyL675Mx7VUCvdIykieec2PVFzRUIqznov8QEk4LD2qKXsL03fnmlxXGAyhaFJDF/IeLHn0HfZgR+dqDQ==",
+      "sha512": "6xFZdEnhuOmX58TgZAeb20MbddsL8/nR/4CnWhmjMXv9gfpOxD+1bBU7IDtYq2Q8rZJUT6xYWdhW16bKriU2Mw==",
       "type": "package",
       "path": "cryptohelper/3.0.2",
       "files": [
@@ -2137,7 +2153,7 @@
       ]
     },
     "Microsoft.AspNetCore.Cryptography.Internal/2.0.1": {
-      "sha512": "HhsYkV/v1L+jNcAtXFpDpLUuKc8j4J612tEPEHn6/9njPWwt1CiNPUfJ8ddW8TA4jptRIv6ltZ+eUNsom9tnTw==",
+      "sha512": "zmERIuyMufMcEOf0nLM9ApgH4VHhUnFGzmrgp2mkFL5unXfzDFg7Itdq4PsKMjrBZScGt3ayN0ct7F5ttdZ1eA==",
       "type": "package",
       "path": "microsoft.aspnetcore.cryptography.internal/2.0.1",
       "files": [
@@ -2150,7 +2166,7 @@
       ]
     },
     "Microsoft.AspNetCore.Cryptography.KeyDerivation/2.0.1": {
-      "sha512": "wHs5PAgsQIA0WMt2I6/q/NptiLFLrFPrauq7Zo9p/zDNb3dRzpzYuhQJdT9zoq1D4LLE4ir9fcW8+Cw+mpyDBA==",
+      "sha512": "rLj4xn0dwWslmk2LSrLUNlJ8pGDspj8MQ6EyLQO+saGobnGXhJa+k92d6X0w2qhZddHhLebXurRFlyKOpdkWNQ==",
       "type": "package",
       "path": "microsoft.aspnetcore.cryptography.keyderivation/2.0.1",
       "files": [
@@ -3328,6 +3344,28 @@
         "runtimes/win-x86/native/sni.dll",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "Stripe.net/39.84.0": {
+      "sha512": "nNo0fvL317ls2opSsNpdJv7fPqZNEIrKhRj+q87+NJcTmjaK3MDnrtmCQjWsDkgB5/VjRqUUapeP910CVuWBkg==",
+      "type": "package",
+      "path": "stripe.net/39.84.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "icon.png",
+        "lib/net461/Stripe.net.dll",
+        "lib/net461/Stripe.net.pdb",
+        "lib/net461/Stripe.net.xml",
+        "lib/net5.0/Stripe.net.dll",
+        "lib/net5.0/Stripe.net.pdb",
+        "lib/net5.0/Stripe.net.xml",
+        "lib/netstandard2.0/Stripe.net.dll",
+        "lib/netstandard2.0/Stripe.net.pdb",
+        "lib/netstandard2.0/Stripe.net.xml",
+        "stripe.net.39.84.0.nupkg.sha512",
+        "stripe.net.nuspec"
       ]
     },
     "Swashbuckle.AspNetCore.Swagger/5.5.1": {
@@ -6905,6 +6943,7 @@
       "Microsoft.AspNetCore.Mvc.NewtonsoftJson >= 3.1.5",
       "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.10.9",
       "NLog.Web.AspNetCore >= 4.9.2",
+      "Stripe.net >= 39.84.0",
       "Swashbuckle.AspNetCore.Swagger >= 5.5.1",
       "Swashbuckle.AspNetCore.SwaggerGen >= 5.5.1",
       "Swashbuckle.AspNetCore.SwaggerUI >= 5.5.1",
@@ -6913,23 +6952,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\linel\\.nuget\\packages\\": {},
+    "C:\\Users\\4PF41LA\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Desarrollo\\Conevento\\back\\api.conevento\\api.conevento\\api.conevento.csproj",
+      "projectUniqueName": "D:\\Proyectos\\premier\\Back\\TFS\\GIT_TECNICAH\\API-conevento\\api.conevento\\api.conevento.csproj",
       "projectName": "api.conevento",
-      "projectPath": "D:\\Desarrollo\\Conevento\\back\\api.conevento\\api.conevento\\api.conevento.csproj",
-      "packagesPath": "C:\\Users\\linel\\.nuget\\packages\\",
-      "outputPath": "D:\\Desarrollo\\Conevento\\back\\api.conevento\\api.conevento\\obj\\",
+      "projectPath": "D:\\Proyectos\\premier\\Back\\TFS\\GIT_TECNICAH\\API-conevento\\api.conevento\\api.conevento.csproj",
+      "packagesPath": "C:\\Users\\4PF41LA\\.nuget\\packages\\",
+      "outputPath": "D:\\Proyectos\\premier\\Back\\TFS\\GIT_TECNICAH\\API-conevento\\api.conevento\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\linel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\4PF41LA\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6943,11 +6982,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "D:\\Desarrollo\\Conevento\\back\\api.conevento\\biz.conevento\\biz.conevento.csproj": {
-              "projectPath": "D:\\Desarrollo\\Conevento\\back\\api.conevento\\biz.conevento\\biz.conevento.csproj"
+            "D:\\Proyectos\\premier\\Back\\TFS\\GIT_TECNICAH\\API-conevento\\biz.conevento\\biz.conevento.csproj": {
+              "projectPath": "D:\\Proyectos\\premier\\Back\\TFS\\GIT_TECNICAH\\API-conevento\\biz.conevento\\biz.conevento.csproj"
             },
-            "D:\\Desarrollo\\Conevento\\back\\api.conevento\\dal.conevento\\dal.conevento.csproj": {
-              "projectPath": "D:\\Desarrollo\\Conevento\\back\\api.conevento\\dal.conevento\\dal.conevento.csproj"
+            "D:\\Proyectos\\premier\\Back\\TFS\\GIT_TECNICAH\\API-conevento\\dal.conevento\\dal.conevento.csproj": {
+              "projectPath": "D:\\Proyectos\\premier\\Back\\TFS\\GIT_TECNICAH\\API-conevento\\dal.conevento\\dal.conevento.csproj"
             }
           }
         }
@@ -6982,6 +7021,10 @@
             "target": "Package",
             "version": "[4.9.2, )"
           },
+          "Stripe.net": {
+            "target": "Package",
+            "version": "[39.84.0, )"
+          },
           "Swashbuckle.AspNetCore.Swagger": {
             "target": "Package",
             "version": "[5.5.1, )"
@@ -7008,7 +7051,7 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[3.1.16, 3.1.16]"
+            "version": "[3.1.21, 3.1.21]"
           }
         ],
         "frameworkReferences": {
@@ -7019,7 +7062,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-preview.6.21355.2\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

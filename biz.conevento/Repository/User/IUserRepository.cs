@@ -11,5 +11,7 @@ namespace biz.conevento.Repository
     {
         string SendMail(string emailTo, string body, string subject);
         string CreatePassword(int length);
+
+        string GetConfiguration(string llave);
     }
 }

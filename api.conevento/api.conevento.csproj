@@ -27,6 +27,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.5" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
     <PackageReference Include="NLog.Web.AspNetCore" Version="4.9.2" />
+    <PackageReference Include="Stripe.net" Version="39.84.0" />
     <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="5.5.1" />
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="5.5.1" />
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="5.5.1" />
@@ -38,7 +39,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="TemplateMail\" />
+    <Folder Include="Imagenes\" />
     <Folder Include="Utility\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>

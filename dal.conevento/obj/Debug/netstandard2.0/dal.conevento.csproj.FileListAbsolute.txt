@@ -24,3 +24,16 @@ D:\Desarrollo\Conevento\back\prueba\dal.conevento\obj\Debug\netstandard2.0\dal.c
 D:\Desarrollo\Conevento\back\prueba\dal.conevento\obj\Debug\netstandard2.0\dal.conevento.csproj.CopyComplete
 D:\Desarrollo\Conevento\back\prueba\dal.conevento\obj\Debug\netstandard2.0\dal.conevento.dll
 D:\Desarrollo\Conevento\back\prueba\dal.conevento\obj\Debug\netstandard2.0\dal.conevento.pdb
+D:\Proyectos\premier\Back\TFS\GIT_TECNICAH\API-conevento\dal.conevento\bin\Debug\netstandard2.0\dal.conevento.deps.json
+D:\Proyectos\premier\Back\TFS\GIT_TECNICAH\API-conevento\dal.conevento\bin\Debug\netstandard2.0\dal.conevento.dll
+D:\Proyectos\premier\Back\TFS\GIT_TECNICAH\API-conevento\dal.conevento\bin\Debug\netstandard2.0\dal.conevento.pdb
+D:\Proyectos\premier\Back\TFS\GIT_TECNICAH\API-conevento\dal.conevento\bin\Debug\netstandard2.0\biz.conevento.dll
+D:\Proyectos\premier\Back\TFS\GIT_TECNICAH\API-conevento\dal.conevento\bin\Debug\netstandard2.0\biz.conevento.pdb
+D:\Proyectos\premier\Back\TFS\GIT_TECNICAH\API-conevento\dal.conevento\obj\Debug\netstandard2.0\dal.conevento.csproj.AssemblyReference.cache
+D:\Proyectos\premier\Back\TFS\GIT_TECNICAH\API-conevento\dal.conevento\obj\Debug\netstandard2.0\dal.conevento.GeneratedMSBuildEditorConfig.editorconfig
+D:\Proyectos\premier\Back\TFS\GIT_TECNICAH\API-conevento\dal.conevento\obj\Debug\netstandard2.0\dal.conevento.AssemblyInfoInputs.cache
+D:\Proyectos\premier\Back\TFS\GIT_TECNICAH\API-conevento\dal.conevento\obj\Debug\netstandard2.0\dal.conevento.AssemblyInfo.cs
+D:\Proyectos\premier\Back\TFS\GIT_TECNICAH\API-conevento\dal.conevento\obj\Debug\netstandard2.0\dal.conevento.csproj.CoreCompileInputs.cache
+D:\Proyectos\premier\Back\TFS\GIT_TECNICAH\API-conevento\dal.conevento\obj\Debug\netstandard2.0\dal.conevento.csproj.CopyComplete
+D:\Proyectos\premier\Back\TFS\GIT_TECNICAH\API-conevento\dal.conevento\obj\Debug\netstandard2.0\dal.conevento.dll
+D:\Proyectos\premier\Back\TFS\GIT_TECNICAH\API-conevento\dal.conevento\obj\Debug\netstandard2.0\dal.conevento.pdb

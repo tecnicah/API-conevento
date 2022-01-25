@@ -4,5 +4,10 @@
         <name>api.conevento</name>
     </assembly>
     <members>
+        <member name="M:api.conevento.Controllers.EventosController.secret_stripe">
+            <summary>
+            ///////////////////////// STRIPE ///////////////////////////////////////////
+            </summary>
+        </member>
     </members>
 </doc>

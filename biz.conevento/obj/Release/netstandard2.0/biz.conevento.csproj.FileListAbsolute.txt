@@ -8,3 +8,13 @@ D:\Desarrollo\Conevento\back\prueba\biz.conevento\obj\Release\netstandard2.0\biz
 D:\Desarrollo\Conevento\back\prueba\biz.conevento\obj\Release\netstandard2.0\biz.conevento.csproj.CoreCompileInputs.cache
 D:\Desarrollo\Conevento\back\prueba\biz.conevento\obj\Release\netstandard2.0\biz.conevento.dll
 D:\Desarrollo\Conevento\back\prueba\biz.conevento\obj\Release\netstandard2.0\biz.conevento.pdb
+D:\Proyectos\premier\Back\TFS\GIT_TECNICAH\API-conevento\biz.conevento\bin\Release\netstandard2.0\biz.conevento.deps.json
+D:\Proyectos\premier\Back\TFS\GIT_TECNICAH\API-conevento\biz.conevento\bin\Release\netstandard2.0\biz.conevento.dll
+D:\Proyectos\premier\Back\TFS\GIT_TECNICAH\API-conevento\biz.conevento\bin\Release\netstandard2.0\biz.conevento.pdb
+D:\Proyectos\premier\Back\TFS\GIT_TECNICAH\API-conevento\biz.conevento\obj\Release\netstandard2.0\biz.conevento.csproj.AssemblyReference.cache
+D:\Proyectos\premier\Back\TFS\GIT_TECNICAH\API-conevento\biz.conevento\obj\Release\netstandard2.0\biz.conevento.GeneratedMSBuildEditorConfig.editorconfig
+D:\Proyectos\premier\Back\TFS\GIT_TECNICAH\API-conevento\biz.conevento\obj\Release\netstandard2.0\biz.conevento.AssemblyInfoInputs.cache
+D:\Proyectos\premier\Back\TFS\GIT_TECNICAH\API-conevento\biz.conevento\obj\Release\netstandard2.0\biz.conevento.AssemblyInfo.cs
+D:\Proyectos\premier\Back\TFS\GIT_TECNICAH\API-conevento\biz.conevento\obj\Release\netstandard2.0\biz.conevento.csproj.CoreCompileInputs.cache
+D:\Proyectos\premier\Back\TFS\GIT_TECNICAH\API-conevento\biz.conevento\obj\Release\netstandard2.0\biz.conevento.dll
+D:\Proyectos\premier\Back\TFS\GIT_TECNICAH\API-conevento\biz.conevento\obj\Release\netstandard2.0\biz.conevento.pdb

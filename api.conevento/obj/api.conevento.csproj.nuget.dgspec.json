@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Desarrollo\\Conevento\\back\\api.conevento\\api.conevento\\api.conevento.csproj": {}
+    "D:\\Proyectos\\premier\\Back\\TFS\\GIT_TECNICAH\\API-conevento\\api.conevento\\api.conevento.csproj": {}
   },
   "projects": {
-    "D:\\Desarrollo\\Conevento\\back\\api.conevento\\api.conevento\\api.conevento.csproj": {
+    "D:\\Proyectos\\premier\\Back\\TFS\\GIT_TECNICAH\\API-conevento\\api.conevento\\api.conevento.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Desarrollo\\Conevento\\back\\api.conevento\\api.conevento\\api.conevento.csproj",
+        "projectUniqueName": "D:\\Proyectos\\premier\\Back\\TFS\\GIT_TECNICAH\\API-conevento\\api.conevento\\api.conevento.csproj",
         "projectName": "api.conevento",
-        "projectPath": "D:\\Desarrollo\\Conevento\\back\\api.conevento\\api.conevento\\api.conevento.csproj",
-        "packagesPath": "C:\\Users\\linel\\.nuget\\packages\\",
-        "outputPath": "D:\\Desarrollo\\Conevento\\back\\api.conevento\\api.conevento\\obj\\",
+        "projectPath": "D:\\Proyectos\\premier\\Back\\TFS\\GIT_TECNICAH\\API-conevento\\api.conevento\\api.conevento.csproj",
+        "packagesPath": "C:\\Users\\4PF41LA\\.nuget\\packages\\",
+        "outputPath": "D:\\Proyectos\\premier\\Back\\TFS\\GIT_TECNICAH\\API-conevento\\api.conevento\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\linel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\4PF41LA\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -31,11 +31,11 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "D:\\Desarrollo\\Conevento\\back\\api.conevento\\biz.conevento\\biz.conevento.csproj": {
-                "projectPath": "D:\\Desarrollo\\Conevento\\back\\api.conevento\\biz.conevento\\biz.conevento.csproj"
+              "D:\\Proyectos\\premier\\Back\\TFS\\GIT_TECNICAH\\API-conevento\\biz.conevento\\biz.conevento.csproj": {
+                "projectPath": "D:\\Proyectos\\premier\\Back\\TFS\\GIT_TECNICAH\\API-conevento\\biz.conevento\\biz.conevento.csproj"
               },
-              "D:\\Desarrollo\\Conevento\\back\\api.conevento\\dal.conevento\\dal.conevento.csproj": {
-                "projectPath": "D:\\Desarrollo\\Conevento\\back\\api.conevento\\dal.conevento\\dal.conevento.csproj"
+              "D:\\Proyectos\\premier\\Back\\TFS\\GIT_TECNICAH\\API-conevento\\dal.conevento\\dal.conevento.csproj": {
+                "projectPath": "D:\\Proyectos\\premier\\Back\\TFS\\GIT_TECNICAH\\API-conevento\\dal.conevento\\dal.conevento.csproj"
               }
             }
           }
@@ -70,6 +70,10 @@
               "target": "Package",
               "version": "[4.9.2, )"
             },
+            "Stripe.net": {
+              "target": "Package",
+              "version": "[39.84.0, )"
+            },
             "Swashbuckle.AspNetCore.Swagger": {
               "target": "Package",
               "version": "[5.5.1, )"
@@ -96,7 +100,7 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[3.1.16, 3.1.16]"
+              "version": "[3.1.21, 3.1.21]"
             }
           ],
           "frameworkReferences": {
@@ -107,24 +111,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-preview.6.21355.2\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Desarrollo\\Conevento\\back\\api.conevento\\biz.conevento\\biz.conevento.csproj": {
+    "D:\\Proyectos\\premier\\Back\\TFS\\GIT_TECNICAH\\API-conevento\\biz.conevento\\biz.conevento.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Desarrollo\\Conevento\\back\\api.conevento\\biz.conevento\\biz.conevento.csproj",
+        "projectUniqueName": "D:\\Proyectos\\premier\\Back\\TFS\\GIT_TECNICAH\\API-conevento\\biz.conevento\\biz.conevento.csproj",
         "projectName": "biz.conevento",
-        "projectPath": "D:\\Desarrollo\\Conevento\\back\\api.conevento\\biz.conevento\\biz.conevento.csproj",
-        "packagesPath": "C:\\Users\\linel\\.nuget\\packages\\",
-        "outputPath": "D:\\Desarrollo\\Conevento\\back\\api.conevento\\biz.conevento\\obj\\",
+        "projectPath": "D:\\Proyectos\\premier\\Back\\TFS\\GIT_TECNICAH\\API-conevento\\biz.conevento\\biz.conevento.csproj",
+        "packagesPath": "C:\\Users\\4PF41LA\\.nuget\\packages\\",
+        "outputPath": "D:\\Proyectos\\premier\\Back\\TFS\\GIT_TECNICAH\\API-conevento\\biz.conevento\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\linel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\4PF41LA\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -171,6 +175,10 @@
             "NLog.Web.AspNetCore": {
               "target": "Package",
               "version": "[4.9.2, )"
+            },
+            "Stripe.net": {
+              "target": "Package",
+              "version": "[39.84.0, )"
             }
           },
           "imports": [
@@ -183,24 +191,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-preview.6.21355.2\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Desarrollo\\Conevento\\back\\api.conevento\\dal.conevento\\dal.conevento.csproj": {
+    "D:\\Proyectos\\premier\\Back\\TFS\\GIT_TECNICAH\\API-conevento\\dal.conevento\\dal.conevento.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Desarrollo\\Conevento\\back\\api.conevento\\dal.conevento\\dal.conevento.csproj",
+        "projectUniqueName": "D:\\Proyectos\\premier\\Back\\TFS\\GIT_TECNICAH\\API-conevento\\dal.conevento\\dal.conevento.csproj",
         "projectName": "dal.conevento",
-        "projectPath": "D:\\Desarrollo\\Conevento\\back\\api.conevento\\dal.conevento\\dal.conevento.csproj",
-        "packagesPath": "C:\\Users\\linel\\.nuget\\packages\\",
-        "outputPath": "D:\\Desarrollo\\Conevento\\back\\api.conevento\\dal.conevento\\obj\\",
+        "projectPath": "D:\\Proyectos\\premier\\Back\\TFS\\GIT_TECNICAH\\API-conevento\\dal.conevento\\dal.conevento.csproj",
+        "packagesPath": "C:\\Users\\4PF41LA\\.nuget\\packages\\",
+        "outputPath": "D:\\Proyectos\\premier\\Back\\TFS\\GIT_TECNICAH\\API-conevento\\dal.conevento\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\linel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\4PF41LA\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -214,8 +222,8 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "D:\\Desarrollo\\Conevento\\back\\api.conevento\\biz.conevento\\biz.conevento.csproj": {
-                "projectPath": "D:\\Desarrollo\\Conevento\\back\\api.conevento\\biz.conevento\\biz.conevento.csproj"
+              "D:\\Proyectos\\premier\\Back\\TFS\\GIT_TECNICAH\\API-conevento\\biz.conevento\\biz.conevento.csproj": {
+                "projectPath": "D:\\Proyectos\\premier\\Back\\TFS\\GIT_TECNICAH\\API-conevento\\biz.conevento\\biz.conevento.csproj"
               }
             }
           }
@@ -252,6 +260,10 @@
               "version": "[2.0.3, )",
               "autoReferenced": true
             },
+            "Stripe.net": {
+              "target": "Package",
+              "version": "[39.84.0, )"
+            },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
               "version": "[6.7.1, )"
@@ -267,7 +279,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-preview.6.21355.2\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
