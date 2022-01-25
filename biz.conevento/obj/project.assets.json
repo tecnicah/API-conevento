@@ -7085,11 +7085,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Proyectos\\premier\\Back\\TFS\\GIT_TECNICAH\\API-conevento\\biz.conevento\\biz.conevento.csproj",
+      "projectUniqueName": "D:\\Proyectos\\Conevento\\back\\GIT BACK\\API-conevento\\biz.conevento\\biz.conevento.csproj",
       "projectName": "biz.conevento",
-      "projectPath": "D:\\Proyectos\\premier\\Back\\TFS\\GIT_TECNICAH\\API-conevento\\biz.conevento\\biz.conevento.csproj",
+      "projectPath": "D:\\Proyectos\\Conevento\\back\\GIT BACK\\API-conevento\\biz.conevento\\biz.conevento.csproj",
       "packagesPath": "C:\\Users\\4PF41LA\\.nuget\\packages\\",
-      "outputPath": "D:\\Proyectos\\premier\\Back\\TFS\\GIT_TECNICAH\\API-conevento\\biz.conevento\\obj\\",
+      "outputPath": "D:\\Proyectos\\Conevento\\back\\GIT BACK\\API-conevento\\biz.conevento\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
