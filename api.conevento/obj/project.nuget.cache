@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "w4W9hCPFdRxZhr6W8oUIkGo6GBbUYxCB+8h+sCYhD2MUVwcurOUb+lMEP66m63oR+sd60p9ELNxaihGSzIk/oQ==",
+  "dgSpecHash": "NBy87fQfTGigoFuFzwvHcVFflD5kpLcLkGFn1l3TS2rbfWJGkLaeUHUphdOHEy/Zr9666WAD8N27GrTaZfWSSA==",
   "success": true,
-  "projectFilePath": "D:\\Proyectos\\premier\\Back\\TFS\\GIT_TECNICAH\\API-conevento\\api.conevento\\api.conevento.csproj",
+  "projectFilePath": "D:\\Proyectos\\Conevento\\back\\GIT BACK\\API-conevento\\api.conevento\\api.conevento.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\4PF41LA\\.nuget\\packages\\automapper\\10.0.0\\automapper.10.0.0.nupkg.sha512",
     "C:\\Users\\4PF41LA\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.0.0\\automapper.extensions.microsoft.dependencyinjection.8.0.0.nupkg.sha512",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xnsCEjzpkE5ljqE8h1ecpLY2Z5RVLCM/TXUBCROUQPGW2ftSlB9+gowSBWvIaOJYycWzpJXhS79l9XDQ/6Or+g==",
+  "dgSpecHash": "o3iKDZ+N/T/LmvGf8lKag+fSgK4OOCb62yPJ8TsU98O0Wmd33vURNeN1FouibdEax3z/N58GvMa+gPnntIdp/w==",
   "success": true,
-  "projectFilePath": "D:\\Proyectos\\premier\\Back\\TFS\\GIT_TECNICAH\\API-conevento\\dal.conevento\\dal.conevento.csproj",
+  "projectFilePath": "D:\\Proyectos\\Conevento\\back\\GIT BACK\\API-conevento\\dal.conevento\\dal.conevento.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\4PF41LA\\.nuget\\packages\\cryptohelper\\3.0.2\\cryptohelper.3.0.2.nupkg.sha512",
     "C:\\Users\\4PF41LA\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",

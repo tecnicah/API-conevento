@@ -7318,11 +7318,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Proyectos\\premier\\Back\\TFS\\GIT_TECNICAH\\API-conevento\\dal.conevento\\dal.conevento.csproj",
+      "projectUniqueName": "D:\\Proyectos\\Conevento\\back\\GIT BACK\\API-conevento\\dal.conevento\\dal.conevento.csproj",
       "projectName": "dal.conevento",
-      "projectPath": "D:\\Proyectos\\premier\\Back\\TFS\\GIT_TECNICAH\\API-conevento\\dal.conevento\\dal.conevento.csproj",
+      "projectPath": "D:\\Proyectos\\Conevento\\back\\GIT BACK\\API-conevento\\dal.conevento\\dal.conevento.csproj",
       "packagesPath": "C:\\Users\\4PF41LA\\.nuget\\packages\\",
-      "outputPath": "D:\\Proyectos\\premier\\Back\\TFS\\GIT_TECNICAH\\API-conevento\\dal.conevento\\obj\\",
+      "outputPath": "D:\\Proyectos\\Conevento\\back\\GIT BACK\\API-conevento\\dal.conevento\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -7342,8 +7342,8 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "projectReferences": {
-            "D:\\Proyectos\\premier\\Back\\TFS\\GIT_TECNICAH\\API-conevento\\biz.conevento\\biz.conevento.csproj": {
-              "projectPath": "D:\\Proyectos\\premier\\Back\\TFS\\GIT_TECNICAH\\API-conevento\\biz.conevento\\biz.conevento.csproj"
+            "D:\\Proyectos\\Conevento\\back\\GIT BACK\\API-conevento\\biz.conevento\\biz.conevento.csproj": {
+              "projectPath": "D:\\Proyectos\\Conevento\\back\\GIT BACK\\API-conevento\\biz.conevento\\biz.conevento.csproj"
             }
           }
         }

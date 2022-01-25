@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sraZn/CJc5J0huz2+bSmDXMVpmzMqCoFs5EL1t6sFBhSkiRClJQxtuCxKL/70n8Pt0wu8BfMIQZCo/PzZA+0Dw==",
+  "dgSpecHash": "qmldipRa9njCnN1NocajkFg76R3B47e6HxbihUQuDkNCMfKzlvRYV4gMhEFeHMfypBuWCWqu6ScD8eknX8QW5g==",
   "success": true,
-  "projectFilePath": "D:\\Proyectos\\premier\\Back\\TFS\\GIT_TECNICAH\\API-conevento\\biz.conevento\\biz.conevento.csproj",
+  "projectFilePath": "D:\\Proyectos\\Conevento\\back\\GIT BACK\\API-conevento\\biz.conevento\\biz.conevento.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\4PF41LA\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\4PF41LA\\.nuget\\packages\\microsoft.aspnetcore.authentication.core\\2.2.0\\microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512",
