@@ -86,6 +86,43 @@ namespace api.conevento.Controllers
             return Ok(response);
         }
 
+        [HttpPost("AddEventAdmin", Name = "AddEventAdmin")]
+        public async Task<ActionResult<ApiResponse<Evento>>> AddEventAdmin(List<EventoDto> _evento)
+        {
+            var response = new ApiResponse<Evento>();
+
+            try
+            {
+                //foreach (var element in _evento)
+                //{
+                //    element.FechaCreacion = DateTime.Now;
+                //    element.FechaPago = DateTime.Now;
+                //    var Sevento = _eventoRepository.Add(_mapper.Map<Evento>(element));
+                //}
+
+                //_evento.FechaCreacion = DateTime.Now;
+                //_evento.FechaPago = DateTime.Now;
+                for(int i = 0; i < _evento.Count(); i++)
+                {
+                    response.Result = _eventoRepository.Add(_mapper.Map<Evento>(_evento[i]));
+                }
+
+                response.Success = true;
+                response.Message = "Evento creado con exíto";
+
+            }
+            catch (Exception ex)
+            {
+                response.Result = null;
+                response.Success = false;
+                response.Message = "Internal server error";
+                _logger.LogError($"Something went wrong: { ex.ToString() }");
+                return StatusCode(500, response);
+            }
+
+            return Ok(response);
+        }
+
         [HttpPost("GetEventsbyuser", Name = "GetEventsbyuser")]
         public ActionResult GetEventsbyuser(int id_user)
         {
@@ -237,7 +274,27 @@ namespace api.conevento.Controllers
             }
         }
 
-       
+        [HttpGet("CalendarEventByServicio", Name = "CalendarEventByServicio")]
+        public ActionResult CalendarEventByServicio(int id)
+        {
+            try
+            {
+                var evento = _eventoRepository.CalendarEventByServicio(id);
+
+                return StatusCode(202, new
+                {
+                    Success = true,
+                    Result = evento,
+                    Message = ""
+                });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Something went wrong: { ex.ToString() }");
+                return StatusCode(500, new { Success = false, Result = 0, Message = $"Internal server error {ex.Message}" });
+            }
+        }
+
     }
 
 

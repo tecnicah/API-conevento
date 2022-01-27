@@ -17,5 +17,6 @@ namespace biz.conevento.Repository
         ActionResult GetEventDtailById(int id);
         PaymentIntentService stripe();
         string get_params(string variable);
+        ActionResult CalendarEventByServicio(int id);
     }
 }
