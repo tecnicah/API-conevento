@@ -16,8 +16,8 @@ namespace dal.conevento.Repository
 {
     public class EventosRepository : GenericRepository<Evento>, IEventosRepository
     {
-      
-        
+
+
 
         public EventosRepository(Db_ConeventoContext context) : base(context)
         {
@@ -40,13 +40,14 @@ namespace dal.conevento.Repository
                 x.IdCatMunicipioNavigation.Municipio,
                 total_sum = String.Format("{0:0.00#}", x.ListaProductosEventos.Select(c => c.IdCatProductoNavigation.PrecioPorUnidad * c.CantidadHoras * c.CantidadUnidades).Sum()),
                 total = String.Format("{0:0.00#}", x.Total),
-                ListaProductosEventos = x.ListaProductosEventos.Select(j => new {
-                 j.IdCatProductoNavigation.PrecioPorUnidad,
-                 j.IdCatProductoNavigation.Producto,
-                 j.CantidadUnidades,
-                 j.CantidadHoras,
-                 j.IdCatProductoNavigation.EspecificarTiempo
-                 
+                ListaProductosEventos = x.ListaProductosEventos.Select(j => new
+                {
+                    j.IdCatProductoNavigation.PrecioPorUnidad,
+                    j.IdCatProductoNavigation.Producto,
+                    j.CantidadUnidades,
+                    j.CantidadHoras,
+                    j.IdCatProductoNavigation.EspecificarTiempo
+
                 })
 
             }).Where(x => x.IdUsuario == id).ToList();
@@ -75,12 +76,13 @@ namespace dal.conevento.Repository
                 x.IdCatMunicipioNavigation.Municipio,
                 x.FormaPago,
                 x.ReferenciaPago,
-                ReqFactura = x.ReqFactura == true ? "SI": "NO",
-                flete  = x.ListaProductosEventos.Where(o => (o.IdCatProductoNavigation.IdCategoriaProducto == 6) || (o.IdCatProductoNavigation.IdCategoriaProducto == 7)).Count(),
+                ReqFactura = x.ReqFactura == true ? "SI" : "NO",
+                flete = x.ListaProductosEventos.Where(o => (o.IdCatProductoNavigation.IdCategoriaProducto == 6) || (o.IdCatProductoNavigation.IdCategoriaProducto == 7)).Count(),
                 total_servicios = x.ListaProductosEventos.Count(),
                 total_sum = String.Format("{0:0.00#}", x.ListaProductosEventos.Select(c => c.IdCatProductoNavigation.PrecioPorUnidad * c.CantidadHoras * c.CantidadUnidades).Sum()),
                 total = String.Format("{0:0.00#}", x.Total),
-                ListaProductosEventos = x.ListaProductosEventos.Select(j => new {
+                ListaProductosEventos = x.ListaProductosEventos.Select(j => new
+                {
                     j.IdCatProductoNavigation.PrecioPorUnidad,
                     j.IdCatProductoNavigation.Producto,
                     j.CantidadUnidades,
@@ -122,7 +124,7 @@ namespace dal.conevento.Repository
             return resultado;
         }
 
-        public ActionResult GetServicesDetailByfilter(DateTime fechaInicial, DateTime fechaFinal, int id_municipio )
+        public ActionResult GetServicesDetailByfilter(DateTime fechaInicial, DateTime fechaFinal, int id_municipio)
         {
             var resultado = _context.Eventos.Select(x => new
             {
@@ -142,8 +144,9 @@ namespace dal.conevento.Repository
                 total_servicios = x.ListaProductosEventos.Count(),
                 usuario = (x.IdUsuarioNavigation.Nombres == null ? "Sin" : x.IdUsuarioNavigation.Nombres) + " " + (x.IdUsuarioNavigation.Apellidos == null ? "Usuario" : x.IdUsuarioNavigation.Apellidos),
                 total_sum = String.Format("{0:0.00#}", x.ListaProductosEventos.Select(c => c.IdCatProductoNavigation.PrecioPorUnidad * c.CantidadHoras * c.CantidadUnidades).Sum()),
-                total = String.Format("{0:0.00#}", x.Total),               
-                ListaProductosEventos = x.ListaProductosEventos.Select(j => new {
+                total = String.Format("{0:0.00#}", x.Total),
+                ListaProductosEventos = x.ListaProductosEventos.Select(j => new
+                {
                     j.IdCatProductoNavigation.PrecioPorUnidad,
                     j.IdCatProductoNavigation.Producto,
                     j.CantidadUnidades,
@@ -152,7 +155,7 @@ namespace dal.conevento.Repository
 
                 })
 
-            }).Where(x => x.FechaHoraInicio >= (fechaInicial == null ? x.FechaHoraInicio : fechaInicial) 
+            }).Where(x => x.FechaHoraInicio >= (fechaInicial == null ? x.FechaHoraInicio : fechaInicial)
             && x.FechaHoraInicio <= (fechaInicial == null ? x.FechaHoraInicio : fechaFinal)
             && x.IdCatMunicipio == (id_municipio == 0 ? x.IdCatMunicipio : id_municipio)).ToList();
 
@@ -160,5 +163,33 @@ namespace dal.conevento.Repository
 
         }
 
+        public ActionResult CalendarEventByServicio(int id)
+        {
+            var resultado = _context.CatProductosServicios
+                .Join(_context.ListaProductosEventos, x => x.Id, y => y.IdCatProducto,
+                (x, y) => new
+                {
+                    x.Id,
+                    x.Producto,
+                    x.DescripcionCorta,
+                    y.IdEvento
+
+                })
+                .Join(_context.Eventos, z => z.IdEvento, w => w.Id,
+                (z, w) => new
+                {
+                    z.Id,
+                    z.Producto,
+                    z.DescripcionCorta,
+                    z.IdEvento,
+                    w.NombreEvento,
+                    w.FechaHoraInicio,
+                    w.FechaHoraFin
+                }).Where(x => x.Id == id);
+
+
+            return new ObjectResult(resultado);
+
+        }
     }
 }
