@@ -44,7 +44,53 @@ namespace api.conevento.Controllers
             _cat_CategoriaREpository = cat_CategoriaREpository;
             _productos = cat_Productos_Servicios;
         }
-        
+
+        // Post Create a new CreateProductoServicios
+        [HttpPost("CreateProductoServicios", Name = "CreateProductoServicios")]
+        [ServiceFilterAttribute(typeof(ValidationFilterAttribute))]
+        public ActionResult<ApiResponse<CatProductosServicio>> CreateProductoServicios([FromBody] CatProductosServicio dto)
+        {
+            var response = new ApiResponse<CatProductosServicio>();
+            try
+            {
+                response.Success = true;
+                response.Message = "Success";
+                response.Result = _productos.Add(_mapper.Map<CatProductosServicio>(dto));
+            }
+            catch (Exception ex)
+            {
+                response.Result = null;
+                response.Success = false;
+                response.Message = ex.ToString();
+                _logger.LogError($"Something went wrong: { ex.Message.ToString() }");
+                return StatusCode(500, response);
+            }
+            return StatusCode(201, response);
+        }
+
+        // Put Update a CreateProductoServicios
+        [HttpPut("UpdateProductoServicios", Name = "UpdateProductoServicios")]
+        [ServiceFilterAttribute(typeof(ValidationFilterAttribute))]
+        public ActionResult<ApiResponse<CatProductosServicio>> UpdateProductoServicios([FromBody] CatProductosServicio dto)
+        {
+            var response = new ApiResponse<CatProductosServicio>();
+            try
+            {
+                response.Success = true;
+                response.Message = "Success";
+                response.Result = _productos.Update(_mapper.Map<CatProductosServicio>(dto), dto.Id);
+            }
+            catch (Exception ex)
+            {
+                response.Result = null;
+                response.Success = false;
+                response.Message = ex.ToString();
+                _logger.LogError($"Something went wrong: { ex.Message.ToString() }");
+                return StatusCode(500, response);
+            }
+            return StatusCode(201, response);
+        }
+
         [HttpGet("Cat_Categorias", Name = "Cat_Categorias")]
         public ActionResult Cat_Categorias(int id_categoria)
         {
