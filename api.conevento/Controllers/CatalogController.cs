@@ -18,6 +18,7 @@ using Microsoft.EntityFrameworkCore;
 using api.conevento.Models.User;
 using System.Text;
 using System.Collections;
+using biz.conevento.Models.Events;
 
 namespace api.conevento.Controllers
 {
@@ -136,6 +137,33 @@ namespace api.conevento.Controllers
                 //var categorias = _cat_CategoriaREpository.GetAll();
                 ICollection res_productos = res_productos = _productos.productos_by_cateid_date(id_categoria, fecha_inicio);
  
+                return StatusCode(202, new
+                {
+                    Success = true,
+                    Result = res_productos,
+                    Message = ""
+                });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Something went wrong: { ex.ToString() }");
+                return StatusCode(500, new { Success = false, Result = 0, Message = $"Internal server error {ex.Message}" });
+            }
+        }
+
+        [HttpPost("Productos_by_id_date", Name = "Productos_by_id_date")]
+        public ActionResult Productos_by_id_date(dtolista _dtolista)
+        {
+            if (_dtolista is null)
+            {
+                throw new ArgumentNullException(nameof(_dtolista));
+            }
+
+            try
+            {
+                //var categorias = _cat_CategoriaREpository.GetAll();
+                List<dtodispo> res_productos = res_productos = _productos.Productos_by_id_date(_dtolista);
+
                 return StatusCode(202, new
                 {
                     Success = true,

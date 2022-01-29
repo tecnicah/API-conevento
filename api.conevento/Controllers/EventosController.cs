@@ -200,6 +200,29 @@ namespace api.conevento.Controllers
             }
         }
 
+        [HttpPost("GetCalendarEvents", Name = "GetCalendarEvents")]
+        public ActionResult GetCalendarEvents(int i)
+        {
+            try
+            {
+                
+
+                var eventos = _eventoRepository.GetCalendarEvents();
+
+                return StatusCode(202, new
+                {
+                    Success = true,
+                    Result = eventos,
+                    Message = ""
+                });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Something went wrong: { ex.ToString() }");
+                return StatusCode(500, new { Success = false, Result = 0, Message = $"Internal server error {ex.Message}" });
+            }
+        }
+
         /// <summary>
         /// ///////////////////////// STRIPE ///////////////////////////////////////////
         /// </summary>

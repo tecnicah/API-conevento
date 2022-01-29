@@ -141,6 +141,7 @@ namespace dal.conevento.Repository
                 x.IdCatMunicipio,
                 x.FormaPago,
                 x.ReferenciaPago,
+                x.NombreEvento,
                 total_servicios = x.ListaProductosEventos.Count(),
                 usuario = (x.IdUsuarioNavigation.Nombres == null ? "Sin" : x.IdUsuarioNavigation.Nombres) + " " + (x.IdUsuarioNavigation.Apellidos == null ? "Usuario" : x.IdUsuarioNavigation.Apellidos),
                 total_sum = String.Format("{0:0.00#}", x.ListaProductosEventos.Select(c => c.IdCatProductoNavigation.PrecioPorUnidad * c.CantidadHoras * c.CantidadUnidades).Sum()),
@@ -157,10 +158,51 @@ namespace dal.conevento.Repository
 
             }).Where(x => x.FechaHoraInicio >= (fechaInicial == null ? x.FechaHoraInicio : fechaInicial)
             && x.FechaHoraInicio <= (fechaInicial == null ? x.FechaHoraInicio : fechaFinal)
-            && x.IdCatMunicipio == (id_municipio == 0 ? x.IdCatMunicipio : id_municipio)).ToList();
+            && x.IdCatMunicipio == (id_municipio == 0 ? x.IdCatMunicipio : id_municipio)
+            && !x.NombreEvento.Contains("No disponible")
+            ).OrderByDescending(o => o.FechaHoraInicio).ToList();
 
             return new ObjectResult(resultado);
 
+        }
+
+        public ActionResult GetCalendarEvents()
+        {
+            var resultado = _context.Eventos.Select(x => new
+            {
+                x.NombreContratane,
+                x.FechaHoraInicio,
+                x.FechaHoraFin,
+                x.Correo,
+                x.CalleNumero,
+                x.Colonia,
+                x.Cp,
+                x.Id,
+                x.IdUsuario,
+                x.Telefono,
+                x.IdCatMunicipioNavigation.Municipio,
+                x.IdCatMunicipio,
+                x.FormaPago,
+                x.ReferenciaPago,
+                x.NombreEvento,
+                total_servicios = x.ListaProductosEventos.Count(),
+                usuario = (x.IdUsuarioNavigation.Nombres == null ? "Sin" : x.IdUsuarioNavigation.Nombres) + " " + (x.IdUsuarioNavigation.Apellidos == null ? "Usuario" : x.IdUsuarioNavigation.Apellidos),
+                total_sum = String.Format("{0:0.00#}", x.ListaProductosEventos.Select(c => c.IdCatProductoNavigation.PrecioPorUnidad * c.CantidadHoras * c.CantidadUnidades).Sum()),
+                total = String.Format("{0:0.00#}", x.Total),
+                ListaProductosEventos = x.ListaProductosEventos.Select(j => new
+                {
+                    j.IdCatProductoNavigation.PrecioPorUnidad,
+                    j.IdCatProductoNavigation.Producto,
+                    j.CantidadUnidades,
+                    j.CantidadHoras,
+                    j.IdCatProductoNavigation.EspecificarTiempo
+
+                })
+
+            }).Where(x => !x.NombreEvento.Contains("No disponible")
+          ).ToList();
+
+            return new ObjectResult(resultado);
         }
 
         public ActionResult CalendarEventByServicio(int id)

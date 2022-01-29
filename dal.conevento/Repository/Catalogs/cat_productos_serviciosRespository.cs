@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using biz.conevento.Entities;
 using biz.conevento.Models.Email;
+using biz.conevento.Models.Events;
 using biz.conevento.Repository;
 using biz.conevento.Servicies;
 using dal.conevento.DBContext;
@@ -192,5 +193,78 @@ namespace dal.conevento.Repository
             return resultado;
         }
 
+        public List<dtodispo> Productos_by_id_date(dtolista _dtolista)
+        {
+            int xx = _dtolista.ListaProductosEventos.Count();
+            int[] arrayint = new int[xx];
+            for (int i =0; i< _dtolista.ListaProductosEventos.Count(); i++ )
+            {
+                arrayint[i] = _dtolista.ListaProductosEventos[i].idCatProducto;
+            }
+
+            List<dtoproductos> _listap = new List<dtoproductos>();
+            for (int i = 0; i < _dtolista.ListaProductosEventos.Count(); i++)
+            {
+                //arrayint[i] = _dtolista.ListaProductosEventos[i].idCatProducto;
+                _listap.Add(_dtolista.ListaProductosEventos[i]);
+            }
+
+            // arrayint = _dtolista.ListaProductosEventos.Select(y => y.id).ToArray();
+
+            var resultado = _context.CatProductosServicios.Select(x => new
+            {
+                x.Id,
+                x.Producto,
+                x.DescripcionCorta,
+                descripcionCorta_lim = x.DescripcionCorta.Substring(0, 30) + "...",
+                x.DescripcionLarga,
+                x.IdCategoriaProducto,
+                x.IdCategoriaProductoNavigation.Categoria,
+                x.PrecioPorUnidad,
+                x.DiasBloqueoAntes,
+                x.DiasBloqueoDespues,
+                x.IdCatTipoUnidad,
+                x.IdCatTipoUnidadNavigation.TipoUnidad,
+                x.MinimoProductos,
+                ImagenSeleccion = _pathimg + x.ImagenSeleccion,
+                x.Activo,
+                x.EspecificarTiempo,
+                x.TipoImagenSeleccion,
+                x.MaximoProductos,
+                x.EspecificacionEspecial,
+                x.StockInicial,
+                sku = x.Sku == null ? "Sku no cargado" : x.Sku,
+                // ocupados = calcula_totales(id_cat,fecha_inicio),
+                _ocupados = _context.ListaProductosEventos.Where(e => e.IdCatProducto == x.Id
+                                                                 && _dtolista.Fecha == e.IdEventoNavigation.FechaHoraInicio.Date).Sum(j => j.CantidadUnidades)
+
+            }).Where(y => arrayint.Contains(y.Id)).ToList();
+
+            List<dtodispo> _dtodispoList = new List<dtodispo>();
+
+            foreach(var p  in resultado)
+            {
+                for (int i = 0; i < _dtolista.ListaProductosEventos.Count(); i++)
+                {
+                    if(p.Id == _dtolista.ListaProductosEventos[i].idCatProducto)
+                    {
+                         dtodispo _dtodispo = new dtodispo();
+                        _dtodispo.idCatProducto = p.Id;
+                        _dtodispo.solicitados = _dtolista.ListaProductosEventos[i].cantidadUnidades;
+                        _dtodispo.Nombre = p.Producto;
+                        _dtodispo.Precio = p.PrecioPorUnidad == null ? 0 : p.PrecioPorUnidad.Value;
+                        _dtodispo.ocupados = p._ocupados;
+                        _dtodispo.stock = p.StockInicial == null ? 0 : p.StockInicial.Value;
+                        _dtodispo.balance = _dtodispo.stock - p._ocupados - _dtolista.ListaProductosEventos[i].cantidadUnidades;
+                        if (_dtodispo.balance < 0)
+                        _dtodispoList.Add(_dtodispo);
+                    }
+                }
+            }
+
+            
+
+            return _dtodispoList;
+        }
     }
 }
