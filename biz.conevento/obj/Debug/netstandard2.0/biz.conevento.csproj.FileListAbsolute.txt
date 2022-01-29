@@ -40,7 +40,6 @@ D:\Desarrollo\Conevento\back\api.conevento\biz.conevento\obj\Debug\netstandard2.
 D:\Proyectos\Conevento\back\GIT BACK\API-conevento\biz.conevento\bin\Debug\netstandard2.0\biz.conevento.deps.json
 D:\Proyectos\Conevento\back\GIT BACK\API-conevento\biz.conevento\bin\Debug\netstandard2.0\biz.conevento.dll
 D:\Proyectos\Conevento\back\GIT BACK\API-conevento\biz.conevento\bin\Debug\netstandard2.0\biz.conevento.pdb
-D:\Proyectos\Conevento\back\GIT BACK\API-conevento\biz.conevento\obj\Debug\netstandard2.0\biz.conevento.csproj.AssemblyReference.cache
 D:\Proyectos\Conevento\back\GIT BACK\API-conevento\biz.conevento\obj\Debug\netstandard2.0\biz.conevento.GeneratedMSBuildEditorConfig.editorconfig
 D:\Proyectos\Conevento\back\GIT BACK\API-conevento\biz.conevento\obj\Debug\netstandard2.0\biz.conevento.AssemblyInfoInputs.cache
 D:\Proyectos\Conevento\back\GIT BACK\API-conevento\biz.conevento\obj\Debug\netstandard2.0\biz.conevento.AssemblyInfo.cs
