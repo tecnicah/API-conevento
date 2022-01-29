@@ -30,6 +30,10 @@
          "ObjectType": 0
       },
       {
+         "Name": "[dbo].[Cat_subcategoria_productos]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[dbo].[Cat_Tipos_unidad]",
          "ObjectType": 0
       },

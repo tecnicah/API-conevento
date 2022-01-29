@@ -15,6 +15,7 @@ namespace biz.conevento.Entities
         public string Producto { get; set; }
         public string DescripcionCorta { get; set; }
         public string DescripcionLarga { get; set; }
+        public int? IdSubcategoriaProductos { get; set; }
         public int IdCategoriaProducto { get; set; }
         public decimal? PrecioPorUnidad { get; set; }
         public int? DiasBloqueoAntes { get; set; }
@@ -32,6 +33,7 @@ namespace biz.conevento.Entities
 
         public virtual CatTiposUnidad IdCatTipoUnidadNavigation { get; set; }
         public virtual CatCategoriaProducto IdCategoriaProductoNavigation { get; set; }
+        public virtual CatSubcategoriaProducto IdSubcategoriaProductosNavigation { get; set; }
         public virtual ICollection<ListaProductosEvento> ListaProductosEventos { get; set; }
     }
 }

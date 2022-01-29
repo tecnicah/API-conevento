@@ -18,6 +18,7 @@ using Microsoft.EntityFrameworkCore;
 using api.conevento.Models.User;
 using System.Text;
 using System.Collections;
+using biz.conevento.Repository.Catalogs;
 
 namespace api.conevento.Controllers
 {
@@ -30,18 +31,21 @@ namespace api.conevento.Controllers
         private readonly IUserRepository _userRepository;
         private readonly ICat_categoria_productosRepository _cat_CategoriaREpository;
         private readonly Icat_productos_serviciosRepository _productos;
+        private readonly IcatSubcategoriaProductosRepository _subcategoriaProductosRepository;
 
         public CatalogController(
              IMapper mapper,
              ILoggerManager logger,
              IUserRepository userRepository
-           , ICat_categoria_productosRepository cat_CategoriaREpository
+           , ICat_categoria_productosRepository cat_CategoriaREpository,
+             IcatSubcategoriaProductosRepository subcategoriaProductosRepository
            , Icat_productos_serviciosRepository cat_Productos_Servicios)
         {
             _mapper = mapper;
             _logger = logger;
             _userRepository = userRepository;
             _cat_CategoriaREpository = cat_CategoriaREpository;
+            _subcategoriaProductosRepository = subcategoriaProductosRepository;
             _productos = cat_Productos_Servicios;
         }
 
@@ -89,6 +93,48 @@ namespace api.conevento.Controllers
                 return StatusCode(500, response);
             }
             return StatusCode(201, response);
+        }
+
+        [HttpGet("Get_Cat_Categorias", Name = "Get_Cat_Categorias")]
+        public ActionResult Get_Cat_Categorias()
+        {
+            try
+            {
+                var categorias = _cat_CategoriaREpository.GetAll();
+
+                return StatusCode(202, new
+                {
+                    Success = true,
+                    Result = categorias,
+                    Message = ""
+                });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Something went wrong: { ex.ToString() }");
+                return StatusCode(500, new { Success = false, Result = 0, Message = $"Internal server error {ex.Message}" });
+            }
+        }
+
+        [HttpGet("Get_Cat_SubCategorias", Name = "Get_Cat_SubCategorias")]
+        public ActionResult Get_Cat_SubCategorias(int id)
+        {
+            try
+            {
+                var categorias = _subcategoriaProductosRepository.FindBy(x=>x.IdCategoria == id);
+
+                return StatusCode(202, new
+                {
+                    Success = true,
+                    Result = categorias,
+                    Message = ""
+                });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Something went wrong: { ex.ToString() }");
+                return StatusCode(500, new { Success = false, Result = 0, Message = $"Internal server error {ex.Message}" });
+            }
         }
 
         [HttpGet("Cat_Categorias", Name = "Cat_Categorias")]
