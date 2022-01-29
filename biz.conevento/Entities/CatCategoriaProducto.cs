@@ -9,6 +9,7 @@ namespace biz.conevento.Entities
         public CatCategoriaProducto()
         {
             CatProductosServicios = new HashSet<CatProductosServicio>();
+            CatSubcategoriaProductos = new HashSet<CatSubcategoriaProducto>();
         }
 
         public int Id { get; set; }
@@ -19,5 +20,6 @@ namespace biz.conevento.Entities
         public string ImagenSeleccion { get; set; }
 
         public virtual ICollection<CatProductosServicio> CatProductosServicios { get; set; }
+        public virtual ICollection<CatSubcategoriaProducto> CatSubcategoriaProductos { get; set; }
     }
 }
