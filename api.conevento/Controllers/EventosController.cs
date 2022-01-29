@@ -31,7 +31,7 @@ namespace api.conevento.Controllers
         private readonly ILoggerManager _logger;
         private readonly IUserRepository _userRepository;
         private readonly IEventosRepository _eventoRepository;
-       // private readonly IVariables_sistemaRepository _Variables_sistemaRepository;
+        // private readonly IVariables_sistemaRepository _Variables_sistemaRepository;
 
         public EventosController(
              IMapper mapper,
@@ -45,7 +45,7 @@ namespace api.conevento.Controllers
             _logger = logger;
             _userRepository = userRepository;
             _eventoRepository = eventoRepository;
-        //    _Variables_sistemaRepository = variablesRepository;
+            //    _Variables_sistemaRepository = variablesRepository;
         }
 
         [HttpPost("AddEvent", Name = "AddEvent")]
@@ -55,8 +55,8 @@ namespace api.conevento.Controllers
 
             try
             {
-                 _evento.FechaCreacion = DateTime.Now;
-                 _evento.FechaPago = DateTime.Now;
+                _evento.FechaCreacion = DateTime.Now;
+                _evento.FechaPago = DateTime.Now;
                 var Sevento = _eventoRepository.Add(_mapper.Map<Evento>(_evento));
                 StreamReader reader = new StreamReader(Path.GetFullPath("TemplateMail/Emaile.html"));
                 string pathimg = _userRepository.GetConfiguration("path_imagenes");
@@ -87,28 +87,62 @@ namespace api.conevento.Controllers
         }
 
         [HttpPost("AddEventAdmin", Name = "AddEventAdmin")]
-        public async Task<ActionResult<ApiResponse<Evento>>> AddEventAdmin(List<EventoDto> _evento)
+        public async Task<ActionResult<ApiResponse<Evento>>> AddEventAdmin(List<EventoDto> _evento, int type, bool lunes, bool martes, bool miercoles, bool jueves, bool viernes, bool sabado, bool domingo)
         {
             var response = new ApiResponse<Evento>();
 
             try
             {
-                //foreach (var element in _evento)
-                //{
-                //    element.FechaCreacion = DateTime.Now;
-                //    element.FechaPago = DateTime.Now;
-                //    var Sevento = _eventoRepository.Add(_mapper.Map<Evento>(element));
-                //}
-
-                //_evento.FechaCreacion = DateTime.Now;
-                //_evento.FechaPago = DateTime.Now;
-                for(int i = 0; i < _evento.Count(); i++)
+                if (type == 1)
                 {
-                    response.Result = _eventoRepository.Add(_mapper.Map<Evento>(_evento[i]));
+                    var inicio = DateTime.Now;
+                    var fin = DateTime.Now.AddDays(183);
+                    int cantidadDias = fin.Subtract(inicio).Days + 1;
+                    var diasSemana = new[] { DayOfWeek.Monday, DayOfWeek.Tuesday, DayOfWeek.Wednesday, DayOfWeek.Thursday, DayOfWeek.Friday, DayOfWeek.Saturday, DayOfWeek.Sunday };
+
+                    for(int z = 0; z < diasSemana.Count(); z++)
+                    {
+                        if (diasSemana[z] == DayOfWeek.Monday && !lunes)
+                            diasSemana = diasSemana.Where((source, index) => index != z).ToArray();
+                        if (diasSemana[z] == DayOfWeek.Tuesday && !martes)
+                            diasSemana = diasSemana.Where((source, index) => index != z).ToArray();
+                        if (diasSemana[z] == DayOfWeek.Wednesday && !miercoles)
+                            diasSemana = diasSemana.Where((source, index) => index != z).ToArray();
+                        if (diasSemana[z] == DayOfWeek.Thursday && !jueves)
+                            diasSemana = diasSemana.Where((source, index) => index != z).ToArray();
+                        if (diasSemana[z] == DayOfWeek.Friday && !viernes)
+                            diasSemana = diasSemana.Where((source, index) => index != z).ToArray();
+                        if (diasSemana[z] == DayOfWeek.Saturday && !sabado)
+                            diasSemana = diasSemana.Where((source, index) => index != z).ToArray();
+                        if (diasSemana[z] == DayOfWeek.Sunday && !domingo)
+                            diasSemana = diasSemana.Where((source, index) => index != z).ToArray();
+                    }
+
+                    var fechas = Enumerable.Range(0, cantidadDias)
+                                      .Select(i => inicio.AddDays(i))
+                                      .Where(d => diasSemana.Contains(d.DayOfWeek)).ToList();
+
+                    for (int i = 0; i < fechas.Count(); i++)
+                    {
+                        _evento[0].FechaHoraInicio = fechas[i];
+                        _evento[0].FechaHoraFin = fechas[i];
+                        response.Result = _eventoRepository.Add(_mapper.Map<Evento>(_evento[0]));
+                    }
+
+                    response.Success = true;
+                    response.Message = "Evento creado con exíto";
                 }
 
-                response.Success = true;
-                response.Message = "Evento creado con exíto";
+                if (type == 2)
+                {
+                    for (int i = 0; i < _evento.Count(); i++)
+                    {
+                        response.Result = _eventoRepository.Add(_mapper.Map<Evento>(_evento[i]));
+                    }
+
+                    response.Success = true;
+                    response.Message = "Evento creado con exíto";
+                }
 
             }
             catch (Exception ex)
@@ -230,8 +264,8 @@ namespace api.conevento.Controllers
         [HttpGet("secret_stripe", Name = "secret_stripe")]
         public ActionResult secret_stripe()
         {
-           // var intent = _eventoRepository.stripe();  // ... Fetch or create the PaymentIntent
-                                                      // return Json(new { client_secret = intent.ClientSecret });
+            // var intent = _eventoRepository.stripe();  // ... Fetch or create the PaymentIntent
+            // return Json(new { client_secret = intent.ClientSecret });
 
             StripeConfiguration.ApiKey = "sk_test_51JcbT7L3Jg9Rumxp8dtMRXX4wtU57GRv3jyQoNerdJXI9L6q70GvL0PauxF8EQ7daQhxhTMk45EOVFaz4yzkY9qI00iT4p7Fdm";
 
@@ -246,7 +280,7 @@ namespace api.conevento.Controllers
                   },
             };
             var service = new PaymentIntentService();
-            var intent =  service.Create(options);
+            var intent = service.Create(options);
 
             return StatusCode(202, new
             {
@@ -268,7 +302,7 @@ namespace api.conevento.Controllers
 
                 var options = new PaymentIntentCreateOptions
                 {
-                    Amount = Convert.ToInt64(payment_intent_request.amount) , //esos son centavos
+                    Amount = Convert.ToInt64(payment_intent_request.amount), //esos son centavos
                     Currency = "mxn",
                     PaymentMethodTypes = new List<string>
                   {
@@ -331,7 +365,7 @@ namespace api.conevento.Controllers
 
         }
 
-        public DateTime fechaInicial  { get; set; }
+        public DateTime fechaInicial { get; set; }
         public DateTime fechaFinal { get; set; }
         public int id_municipio { get; set; }
 

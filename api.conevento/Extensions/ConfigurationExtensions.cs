@@ -6,6 +6,8 @@ using dal.conevento.Repository;
 using Microsoft.AspNetCore.Builder;
 using biz.conevento.Entities;
 using Microsoft.EntityFrameworkCore.Metadata;
+using biz.conevento.Repository.Catalogs;
+using dal.conevento.Repository.Catalogs;
 
 namespace api.conevento.Extensions
 {
@@ -48,6 +50,7 @@ namespace api.conevento.Extensions
             services.AddTransient<ICat_categoria_productosRepository, Cat_categoria_productosRepository>();
             services.AddTransient<Icat_productos_serviciosRepository, cat_productos_serviciosRespository>();
             services.AddTransient<IEventosRepository, EventosRepository>();
+            services.AddTransient<IcatSubcategoriaProductosRepository, catSubcategoriaProductosRepository>();
         }
         
         public static void ConfigureServices(this IServiceCollection services)
