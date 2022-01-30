@@ -20,6 +20,7 @@ using System.Text;
 using System.Collections;
 using biz.conevento.Models.Events;
 using biz.conevento.Repository.Catalogs;
+using api.conevento.Models.Services;
 
 namespace api.conevento.Controllers
 {
@@ -53,14 +54,26 @@ namespace api.conevento.Controllers
         // Post Create a new CreateProductoServicios
         [HttpPost("CreateProductoServicios", Name = "CreateProductoServicios")]
         [ServiceFilterAttribute(typeof(ValidationFilterAttribute))]
-        public ActionResult<ApiResponse<CatProductosServicio>> CreateProductoServicios([FromBody] CatProductosServicio dto)
+        public ActionResult<ApiResponse<DtoCatProductosServicios>> CreateProductoServicios([FromBody] DtoCatProductosServicios dto)
         {
-            var response = new ApiResponse<CatProductosServicio>();
+            var response = new ApiResponse<DtoCatProductosServicios>();
             try
             {
+
+                if (_productos.IsBase64(dto.image)){
+                    if (dto.image != null)
+                    {
+                        dto.ImagenSeleccion = _productos.UploadImageBase64(dto.image);
+                    }
+                }
+
+                CatProductosServicio _r = _productos.Add(_mapper.Map<CatProductosServicio>(dto));
+               
+
                 response.Success = true;
                 response.Message = "Success";
-                response.Result = _productos.Add(_mapper.Map<CatProductosServicio>(dto));
+                //response.Result = _r;
+                //response.Result = _productos.Add(_mapper.Map<CatProductosServicio>(dto));
             }
             catch (Exception ex)
             {
@@ -76,14 +89,24 @@ namespace api.conevento.Controllers
         // Put Update a CreateProductoServicios
         [HttpPut("UpdateProductoServicios", Name = "UpdateProductoServicios")]
         [ServiceFilterAttribute(typeof(ValidationFilterAttribute))]
-        public ActionResult<ApiResponse<CatProductosServicio>> UpdateProductoServicios([FromBody] CatProductosServicio dto)
+        public ActionResult<ApiResponse<DtoCatProductosServicios>> UpdateProductoServicios([FromBody] DtoCatProductosServicios dto)
         {
-            var response = new ApiResponse<CatProductosServicio>();
+            var response = new ApiResponse<DtoCatProductosServicios>();
             try
             {
+                if (_productos.IsBase64(dto.image))
+                {
+                    if (dto.image != null)
+                    {
+                        dto.ImagenSeleccion = _productos.UploadImageBase64(dto.image);
+                    }
+                }
+
+                CatProductosServicio _r = _productos.Update(_mapper.Map<CatProductosServicio>(dto), dto.Id);
+
                 response.Success = true;
                 response.Message = "Success";
-                response.Result = _productos.Update(_mapper.Map<CatProductosServicio>(dto), dto.Id);
+                //response.Result = _productos.Update(_mapper.Map<CatProductosServicio>(dto), dto.Id);
             }
             catch (Exception ex)
             {
@@ -122,7 +145,7 @@ namespace api.conevento.Controllers
         {
             try
             {
-                var categorias = _subcategoriaProductosRepository.FindBy(x=>x.IdCategoria == id);
+                var categorias = _subcategoriaProductosRepository.FindBy(x => x.IdCategoria == id).ToList();
 
                 return StatusCode(202, new
                 {
@@ -168,6 +191,43 @@ namespace api.conevento.Controllers
                 {
                     Success = true,
                     Result = categorias,
+                    Message = ""
+                });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Something went wrong: { ex.ToString() }");
+                return StatusCode(500, new { Success = false, Result = 0, Message = $"Internal server error {ex.Message}" });
+            }
+        }
+
+        [HttpGet("Get_Cat_CategoriasById", Name = "Get_Cat_CategoriasById")]
+        public ActionResult Get_Cat_CategoriasById(int id_categoria)
+        {
+            try
+            {
+                //var categorias = _cat_CategoriaREpository.GetAll();
+                IQueryable<CatProductosServicio> res_productos = null;
+
+                res_productos = _productos.FindBy(x => x.Id == id_categoria);
+
+                if (res_productos.Count() > 0)
+                {
+                    string pathimg = _userRepository.GetConfiguration("path_imagenes");
+                    foreach (CatProductosServicio element in res_productos)
+                    {
+                        if (element.TipoImagenSeleccion == "imagen")
+                        {
+                            element.ImagenSeleccion = pathimg + element.ImagenSeleccion;
+                        }
+
+                    }
+                }
+
+                return StatusCode(202, new
+                {
+                    Success = true,
+                    Result = res_productos,
                     Message = ""
                 });
             }
