@@ -214,7 +214,10 @@ namespace dal.conevento.Repository
                     x.Id,
                     x.Producto,
                     x.DescripcionCorta,
-                    y.IdEvento
+                    y.IdEvento,
+                    x.DiasBloqueoAntes,
+                    x.DiasBloqueoDespues,
+                    usuario = (y.IdEventoNavigation.IdUsuarioNavigation.Nombres == null ? "Sin" : y.IdEventoNavigation.IdUsuarioNavigation.Nombres) + " " + (y.IdEventoNavigation.IdUsuarioNavigation.Apellidos == null ? "Usuario" : y.IdEventoNavigation.IdUsuarioNavigation.Apellidos),
 
                 })
                 .Join(_context.Eventos, z => z.IdEvento, w => w.Id,
@@ -223,6 +226,9 @@ namespace dal.conevento.Repository
                     z.Id,
                     z.Producto,
                     z.DescripcionCorta,
+                    z.DiasBloqueoAntes,
+                    z.DiasBloqueoDespues,
+                    z.usuario,
                     z.IdEvento,
                     w.NombreEvento,
                     w.FechaHoraInicio,

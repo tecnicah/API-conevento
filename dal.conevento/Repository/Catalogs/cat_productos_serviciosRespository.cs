@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -265,6 +266,43 @@ namespace dal.conevento.Repository
             
 
             return _dtodispoList;
+        }
+
+        public string UploadImageBase64(string image)
+        {
+            //string ruta;
+
+            var filePath = Environment.CurrentDirectory;
+            var extension = "png";
+            var _guid = Guid.NewGuid();
+            var path = "/Imagenes/assets/Home/imagenes-productos/" + _guid + "." + extension;
+
+            var bytes = Convert.FromBase64String(image);
+            using (var imageFile = new FileStream(filePath + path, FileMode.Create))
+            {
+                imageFile.Write(bytes, 0, bytes.Length);
+                imageFile.Flush();
+            }
+
+            return "assets/Home/imagenes-productos/" + _guid + "." + extension;;
+        }
+
+        public bool IsBase64(string base64String)
+        {
+            if (string.IsNullOrEmpty(base64String) || base64String.Length % 4 != 0
+               || base64String.Contains(" ") || base64String.Contains("\t") || base64String.Contains("\r") || base64String.Contains("\n"))
+                return false;
+
+            try
+            {
+                Convert.FromBase64String(base64String);
+                return true;
+            }
+            catch (Exception exception)
+            {
+                // Handle the exception
+            }
+            return false;
         }
     }
 }

@@ -20,6 +20,7 @@ namespace api.conevento.Models.Services
         public decimal? PrecioPorUnidad { get; set; }
         public int? DiasBloqueoAntes { get; set; }
         public int? DiasBloqueoDespues { get; set; }
+        public int? idCatTipoUnidad { get; set; }
         public int? MinimoProductos { get; set; }
         public string ImagenSeleccion { get; set; }
         public bool? Activo { get; set; }
@@ -29,6 +30,7 @@ namespace api.conevento.Models.Services
         public string EspecificacionEspecial { get; set; }
         public string Sku { get; set; }
         public int? StockInicial { get; set; }
+        public string? image { get; set; }
 
     }
 }

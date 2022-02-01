@@ -19,5 +19,7 @@ namespace biz.conevento.Repository
         ICollection productos_by_cateid_date(int id_cat, DateTime fehca_infecha_inicio);
 
         List<dtodispo> Productos_by_id_date(dtolista _dtolista);
+        string UploadImageBase64(string image);
+        bool IsBase64(string base64String);
     }
 }

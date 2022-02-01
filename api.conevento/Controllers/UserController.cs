@@ -39,7 +39,7 @@ namespace api.conevento.Controllers
         }
 
 
-        [HttpGet]
+        [HttpGet("GetUserAll", Name = "GetUserAll")]
         public ActionResult<ApiResponse<List<UserDto>>> GetAll()
         {
             var response = new ApiResponse<List<UserDto>>();
@@ -47,6 +47,27 @@ namespace api.conevento.Controllers
             try
             {
                 response.Result = _mapper.Map<List<UserDto>>(_userRepository.GetAll());
+            }
+            catch (Exception ex)
+            {
+                response.Result = null;
+                response.Success = false;
+                response.Message = "Internal server error";
+                _logger.LogError($"Something went wrong: { ex.ToString() }");
+                return StatusCode(500, response);
+            }
+
+            return Ok(response);
+        }
+
+        [HttpGet("GetUserById", Name = "GetUserById")]
+        public ActionResult<ApiResponse<List<UserDto>>> GetUserById(int id)
+        {
+            var response = new ApiResponse<List<UserDto>>();
+
+            try
+            {
+                response.Result = _mapper.Map<List<UserDto>>(_userRepository.FindBy(x => x.Id == id));
             }
             catch (Exception ex)
             {

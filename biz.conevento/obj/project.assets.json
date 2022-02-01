@@ -4804,7 +4804,7 @@
       ]
     },
     "System.Numerics.Vectors/4.4.0": {
-      "sha512": "UiLzLW+Lw6HLed1Hcg+8jSRttrbuXv7DANVj0DkL9g6EnnzbL75EB7EWsw5uRbhxd/4YdG8li5XizGWepmG3PQ==",
+      "sha512": "ZhdgJiihSOGD325jClouHy8WSPtwFSj6K1OymoEyN0Wc9Y6X2OVxn65VKfTWHQOYM+QljlVSreporVNvZm8rEA==",
       "type": "package",
       "path": "system.numerics.vectors/4.4.0",
       "files": [
@@ -7080,23 +7080,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\4PF41LA\\.nuget\\packages\\": {},
+    "C:\\Users\\linel\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Proyectos\\Conevento\\back\\GIT BACK\\API-conevento\\biz.conevento\\biz.conevento.csproj",
+      "projectUniqueName": "D:\\Desarrollo\\Conevento\\back\\api.conevento\\biz.conevento\\biz.conevento.csproj",
       "projectName": "biz.conevento",
-      "projectPath": "D:\\Proyectos\\Conevento\\back\\GIT BACK\\API-conevento\\biz.conevento\\biz.conevento.csproj",
-      "packagesPath": "C:\\Users\\4PF41LA\\.nuget\\packages\\",
-      "outputPath": "D:\\Proyectos\\Conevento\\back\\GIT BACK\\API-conevento\\biz.conevento\\obj\\",
+      "projectPath": "D:\\Desarrollo\\Conevento\\back\\api.conevento\\biz.conevento\\biz.conevento.csproj",
+      "packagesPath": "C:\\Users\\linel\\.nuget\\packages\\",
+      "outputPath": "D:\\Desarrollo\\Conevento\\back\\api.conevento\\biz.conevento\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\4PF41LA\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\linel\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7163,7 +7163,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-preview.6.21355.2\\RuntimeIdentifierGraph.json"
       }
     }
   }
