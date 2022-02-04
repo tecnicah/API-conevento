@@ -237,7 +237,7 @@ namespace dal.conevento.Repository
                 sku = x.Sku == null ? "Sku no cargado" : x.Sku,
                 // ocupados = calcula_totales(id_cat,fecha_inicio),
                 _ocupados = _context.ListaProductosEventos.Where(e => e.IdCatProducto == x.Id
-                                                                 && _dtolista.Fecha == e.IdEventoNavigation.FechaHoraInicio.Date).Sum(j => j.CantidadUnidades)
+                                                                 && _dtolista.Fecha.Date == e.IdEventoNavigation.FechaHoraInicio.Date).Sum(j => j.CantidadUnidades)
 
             }).Where(y => arrayint.Contains(y.Id)).ToList();
 
