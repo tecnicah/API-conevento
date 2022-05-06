@@ -12,6 +12,7 @@ namespace api.conevento.Models.Events
         }
 
         public int Id { get; set; }
+        public int? IdCupon { get; set; }
         public string NombreContratane { get; set; }
         public string NombreEvento { get; set; }
         public DateTime? FechaHoraInicio { get; set; }

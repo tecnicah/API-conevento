@@ -8,6 +8,8 @@ using biz.conevento.Entities;
 using Microsoft.EntityFrameworkCore.Metadata;
 using biz.conevento.Repository.Catalogs;
 using dal.conevento.Repository.Catalogs;
+using biz.conevento.Repository.Coupons;
+using dal.conevento.Repository.Coupons;
 
 namespace api.conevento.Extensions
 {
@@ -51,6 +53,9 @@ namespace api.conevento.Extensions
             services.AddTransient<Icat_productos_serviciosRepository, cat_productos_serviciosRespository>();
             services.AddTransient<IEventosRepository, EventosRepository>();
             services.AddTransient<IcatSubcategoriaProductosRepository, catSubcategoriaProductosRepository>();
+            services.AddTransient<IEstadosRepository, EstadosRepository>();
+            services.AddTransient<IMunicipiosRepository, MunicipiosRepository>();
+            services.AddTransient<ICouponsRepository, CouponsRepository>();
         }
         
         public static void ConfigureServices(this IServiceCollection services)

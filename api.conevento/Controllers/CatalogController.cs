@@ -34,14 +34,18 @@ namespace api.conevento.Controllers
         private readonly ICat_categoria_productosRepository _cat_CategoriaREpository;
         private readonly Icat_productos_serviciosRepository _productos;
         private readonly IcatSubcategoriaProductosRepository _subcategoriaProductosRepository;
+        private readonly IEstadosRepository _estadosRepository;
+        private readonly IMunicipiosRepository _municipiosRepository;
 
         public CatalogController(
              IMapper mapper,
              ILoggerManager logger,
-             IUserRepository userRepository
-           , ICat_categoria_productosRepository cat_CategoriaREpository,
-             IcatSubcategoriaProductosRepository subcategoriaProductosRepository
-           , Icat_productos_serviciosRepository cat_Productos_Servicios)
+             IUserRepository userRepository,
+             ICat_categoria_productosRepository cat_CategoriaREpository,
+             IcatSubcategoriaProductosRepository subcategoriaProductosRepository,
+             Icat_productos_serviciosRepository cat_Productos_Servicios,
+             IEstadosRepository estadosRepository,
+             IMunicipiosRepository municipiosRepository)
         {
             _mapper = mapper;
             _logger = logger;
@@ -49,6 +53,8 @@ namespace api.conevento.Controllers
             _cat_CategoriaREpository = cat_CategoriaREpository;
             _subcategoriaProductosRepository = subcategoriaProductosRepository;
             _productos = cat_Productos_Servicios;
+            _estadosRepository = estadosRepository;
+            _municipiosRepository = municipiosRepository;
         }
 
         // Post Create a new CreateProductoServicios
@@ -247,7 +253,7 @@ namespace api.conevento.Controllers
                 IQueryable<CatProductosServicio> res_productos = null;
                 if ( id_categoria != 0)
                 {
-                     res_productos = _productos.FindBy(x => x.IdCategoriaProducto == id_categoria && x.Activo == true);
+                     res_productos = _productos.FindBy(x => x.IdCategoriaProducto == id_categoria && x.Activo == true && x.StockInicial > 0);
                 }
                 else
                 {
@@ -410,6 +416,47 @@ namespace api.conevento.Controllers
             }
         }
 
+        [HttpGet("Get_Estados", Name = "Get_Estados")]
+        public ActionResult Get_Estados()
+        {
+            try
+            {
+                var categorias = _estadosRepository.GetAll();
+
+                return StatusCode(202, new
+                {
+                    Success = true,
+                    Result = categorias,
+                    Message = ""
+                });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Something went wrong: { ex.ToString() }");
+                return StatusCode(500, new { Success = false, Result = 0, Message = $"Internal server error {ex.Message}" });
+            }
+        }
+
+        [HttpGet("Get_MunicipioByEstadoId", Name = "Get_MunicipioByEstadoId")]
+        public ActionResult Get_MunicipioByEstadoId(int IdEstado)
+        {
+            try
+            {
+                var categorias = _municipiosRepository.FindBy(x => x.IdCatEstado == IdEstado);
+
+                return StatusCode(202, new
+                {
+                    Success = true,
+                    Result = categorias,
+                    Message = ""
+                });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Something went wrong: { ex.ToString() }");
+                return StatusCode(500, new { Success = false, Result = 0, Message = $"Internal server error {ex.Message}" });
+            }
+        }
         //[HttpPost("AddUpdateService", Name = "AddUpdateService")]
         //public async Task<ActionResult<ApiResponse<Evento>>> AddUpdateService(EventoDto _evento)
         //{

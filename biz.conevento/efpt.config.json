@@ -38,6 +38,10 @@
          "ObjectType": 0
       },
       {
+         "Name": "[dbo].[Cupones]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[dbo].[Eventos]",
          "ObjectType": 0
       },

@@ -157,7 +157,7 @@ namespace api.conevento
                 c.SwaggerEndpoint("../swagger/v1/swagger.json", "Conevento API V1");
 #else
               
-                c.SwaggerEndpoint("/API-conevento/swagger/v1/swagger.json", "Web API V1");
+                c.SwaggerEndpoint("/api-conevento/swagger/v1/swagger.json", "Web API V1");
 #endif
             });
             app.UseEndpoints(endpoints =>

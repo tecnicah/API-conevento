@@ -12,6 +12,7 @@ namespace biz.conevento.Entities
         }
 
         public int Id { get; set; }
+        public int? IdCupon { get; set; }
         public string NombreContratane { get; set; }
         public string NombreEvento { get; set; }
         public DateTime FechaHoraInicio { get; set; }
@@ -35,6 +36,7 @@ namespace biz.conevento.Entities
         public bool? ReqFactura { get; set; }
 
         public virtual CatMunicipio IdCatMunicipioNavigation { get; set; }
+        public virtual Cupone IdCuponNavigation { get; set; }
         public virtual User IdUsuarioNavigation { get; set; }
         public virtual ICollection<ListaProductosEvento> ListaProductosEventos { get; set; }
     }

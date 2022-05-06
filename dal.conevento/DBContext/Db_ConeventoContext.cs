@@ -23,6 +23,7 @@ namespace dal.conevento.DBContext
         public virtual DbSet<CatProductosServicio> CatProductosServicios { get; set; }
         public virtual DbSet<CatSubcategoriaProducto> CatSubcategoriaProductos { get; set; }
         public virtual DbSet<CatTiposUnidad> CatTiposUnidads { get; set; }
+        public virtual DbSet<Cupone> Cupones { get; set; }
         public virtual DbSet<Evento> Eventos { get; set; }
         public virtual DbSet<ListaProductosEvento> ListaProductosEventos { get; set; }
         public virtual DbSet<User> Users { get; set; }
@@ -206,6 +207,37 @@ namespace dal.conevento.DBContext
                     .IsFixedLength();
             });
 
+            modelBuilder.Entity<Cupone>(entity =>
+            {
+                entity.Property(e => e.Id).HasColumnName("id");
+
+                entity.Property(e => e.Estatus).HasColumnName("estatus");
+
+                entity.Property(e => e.FechaFinal)
+                    .HasColumnName("fecha_final")
+                    .HasColumnType("date");
+
+                entity.Property(e => e.FechaInicial)
+                    .HasColumnName("fecha_inicial")
+                    .HasColumnType("date");
+
+                entity.Property(e => e.MontoPesos)
+                    .HasColumnName("monto_pesos")
+                    .HasColumnType("decimal(18, 2)");
+
+                entity.Property(e => e.MontoPorcentaje).HasColumnName("monto_porcentaje");
+
+                entity.Property(e => e.Nombre)
+                    .IsRequired()
+                    .HasColumnName("nombre")
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.NumeroCupones).HasColumnName("numero_cupones");
+
+                entity.Property(e => e.Type).HasColumnName("type");
+            });
+
             modelBuilder.Entity<Evento>(entity =>
             {
                 entity.Property(e => e.Id).HasColumnName("id");
@@ -260,6 +292,8 @@ namespace dal.conevento.DBContext
 
                 entity.Property(e => e.IdCatMunicipio).HasColumnName("id_cat_municipio");
 
+                entity.Property(e => e.IdCupon).HasColumnName("id_cupon");
+
                 entity.Property(e => e.IdUsuario).HasColumnName("id_usuario");
 
                 entity.Property(e => e.NombreContratane)
@@ -291,6 +325,11 @@ namespace dal.conevento.DBContext
                     .HasForeignKey(d => d.IdCatMunicipio)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Eventos_Cat_Municipios");
+
+                entity.HasOne(d => d.IdCuponNavigation)
+                    .WithMany(p => p.Eventos)
+                    .HasForeignKey(d => d.IdCupon)
+                    .HasConstraintName("FK_Eventos_Cupones");
 
                 entity.HasOne(d => d.IdUsuarioNavigation)
                     .WithMany(p => p.Eventos)

@@ -17,6 +17,7 @@ namespace api.conevento.Models.Services
         public string DescripcionCorta { get; set; }
         public string DescripcionLarga { get; set; }
         public int IdCategoriaProducto { get; set; }
+        public int? IdSubcategoriaProductos { get; set; }
         public decimal? PrecioPorUnidad { get; set; }
         public int? DiasBloqueoAntes { get; set; }
         public int? DiasBloqueoDespues { get; set; }
