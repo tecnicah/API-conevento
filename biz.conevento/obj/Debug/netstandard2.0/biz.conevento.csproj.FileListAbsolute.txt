@@ -46,3 +46,4 @@ D:\Proyectos\Conevento\back\GIT BACK\API-conevento\biz.conevento\obj\Debug\netst
 D:\Proyectos\Conevento\back\GIT BACK\API-conevento\biz.conevento\obj\Debug\netstandard2.0\biz.conevento.csproj.CoreCompileInputs.cache
 D:\Proyectos\Conevento\back\GIT BACK\API-conevento\biz.conevento\obj\Debug\netstandard2.0\biz.conevento.dll
 D:\Proyectos\Conevento\back\GIT BACK\API-conevento\biz.conevento\obj\Debug\netstandard2.0\biz.conevento.pdb
+D:\Proyectos\Conevento\back\GIT BACK\API-conevento\biz.conevento\obj\Debug\netstandard2.0\biz.conevento.csproj.AssemblyReference.cache
