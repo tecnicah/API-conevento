@@ -244,6 +244,22 @@ namespace api.conevento.Controllers
             }
         }
 
+        [HttpPost("ActiveService", Name = "ActiveService")]
+        public bool ActiveService(int id, bool active)
+        {
+            bool result = false;
+            try
+            {
+                result = _productos.active_service(id, active);
+            }
+            catch (Exception ex)
+            {
+                result = false;
+            }
+
+            return result;
+        }
+
         [HttpGet("productos_by_Cat", Name = "productos_by_Cat")]
         public ActionResult productos_by_Cat(int id_categoria)
         {

@@ -157,6 +157,27 @@ namespace dal.conevento.Repository
             return cant;
         }
 
+        public bool active_service(int id, bool active)
+        {
+            bool result = false;
+
+            try
+            {
+                var service = _context.CatProductosServicios.FirstOrDefault(x => x.Id == id);
+                service.Activo = active;
+
+                _context.Update(service);
+                _context.SaveChanges();
+                result = true;
+            }
+            catch (Exception ex) {
+                result = false;
+            }
+
+
+            return result;
+        }
+
         public ICollection productos_by_cateid_date(int id_cat, DateTime fecha_inicio)
         {
            

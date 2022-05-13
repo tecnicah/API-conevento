@@ -21,5 +21,6 @@ namespace biz.conevento.Repository
         List<dtodispo> Productos_by_id_date(dtolista _dtolista);
         string UploadImageBase64(string image);
         bool IsBase64(string base64String);
+        bool active_service(int id, bool active);
     }
 }
